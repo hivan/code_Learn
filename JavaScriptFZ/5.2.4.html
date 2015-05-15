@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>综合应用</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  var myObject = new Object();
+  myObject.a = new Function("x", "return x*x");
+  myObject.b = 10;
+  var x = myObject.a(myObject.b);
+  document.write("变量X的值为: " + x + "<br>");
+  var arr = new Array();
+  arr[0] = function(x) {
+    return 2 * x
+  };
+  arr[1] = 100;
+  arr[2] = arr[0](arr[1]);
+  document.write("arr[2]的值为: " + arr[2] + "<br>");
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

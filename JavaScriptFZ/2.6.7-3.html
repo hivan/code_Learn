@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>嵌套函数体中的变量的有效范围</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  <!-- 
+    function writeText () {
+      var x = "这是一个局部变量";
+      function writeText1 () {
+        var y = "这是一个嵌套函数中的变量";
+        document.write(x+"<br>");
+        document.write(y+"<br>");
+      }
+      writeText1();
+      document.write(x+"<br>");
+      // 这一行会导致错误
+      document.write(y+"<br>");
+    }
+    writeText();
+  -->
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

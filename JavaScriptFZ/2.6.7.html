@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>变量优先级</title>
+  <script type="text/javascript">
+  <!--
+  var x = "这是全局变量";
+
+  function writeX() {
+    var x = "这是局部变量";
+    document.write(x);
+  }
+  writeX();
+  document.write("\n" + x);
+  -->
+  </script>
+  <script type="text/javascript">
+  <!--
+    function writeText () {
+      var x = "this is a 局部变量";
+      y = "这是一个全局变量";
+      document.write(x+"<br>");
+      document.write(y+"<br>");
+    }
+    writeText();
+    document.write(x+"<br>");
+    document.write(y+"<br>");
+  -->
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

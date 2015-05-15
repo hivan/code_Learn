@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript">
+  var mySum = new Function("x", "y", "var z=x+y; return z;");
+  var myWrite = new Function("str","document.write(str)");
+  var myFun = new Function("var x = mySum(2,3); myWrite(x)");
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

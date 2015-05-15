@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>if...else if...</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript" charset="utf-8">
+  var myDate = new Date();
+  var myHoure = myDate.getHours();
+  document.write(myHoure+"<br>");
+  if (myHoure>5 && myHoure<=12) {
+    document.write("morning"+"<br>");
+  }else{
+    if (myHoure>12 && myHoure <=18) {
+      document.write("afternoon"+"<br>");
+    } else{
+      document.write("evening"+"<br>");
+    }
+  }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>switch</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function myFun (str) {
+    switch(str){
+      case "1":
+        alert("你选择的是1");
+        break;
+      case "2":
+        alert("你选择的是2");
+        break;
+      case "3":
+        alert("你选择的是3");
+        break;
+      case "4":
+        alert("你选择的是4");
+        break;
+      case "5":
+        alert("你选择的是5");
+        break;
+      case "6":
+        alert("你选择的是6");
+        break;
+      default:
+        alert("你选择的是星期天");
+    }
+  }
+  </script>
+</head>
+<body>
+  <input type="radio" name="week" value="1" onclick="myFun(this.value)">星期1 <br>
+  <input type="radio" name="week" value="2" onclick="myFun(this.value)">星期2 <br>
+  <input type="radio" name="week" value="3" onclick="myFun(this.value)">星期3 <br>
+  <input type="radio" name="week" value="4" onclick="myFun(this.value)">星期4 <br>
+  <input type="radio" name="week" value="5" onclick="myFun(this.value)">星期5 <br>
+  <input type="radio" name="week" value="6" onclick="myFun(this.value)">星期6 <br>
+  <input type="radio" name="week" value="7" onclick="myFun(this.value)">星期7 <br>
+</body>
+</html>
