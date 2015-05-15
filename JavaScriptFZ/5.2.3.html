@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>函数赋值给对象或数组</title>
+  <script type="text/javascript">
+  function mySum (x,y) {
+    var z = x+y;
+    return z;
+  }
+  var myObject = new Object();
+  myObject.a = 2;
+  myObject.b = 3;
+  myObject.c = mySum(myObject.a, myObject.b);
+  document.write(myObject.c+"<br>");
+
+  var arr = new Array(3);
+  arr[0] = 3;
+  arr[1] = 7;
+  arr[2] = mySum(arr[0], arr[1]);
+  document.write(arr[2]);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

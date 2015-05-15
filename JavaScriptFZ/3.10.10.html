@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>this</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function outtext1 (obj) {
+    alert(obj.value);
+  }
+  function outtext2 (str) {
+    alert(str);
+  }
+  </script>
+</head>
+<body>
+  <input type="text" name="第一个文本框" value="第一个文本框" onclick="outtext1(this)">
+  <input type="text" name="第二个文本框" value="第二个文本框" onclick="outtext2(this.value)">
+</body>
+</html>

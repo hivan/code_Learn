@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function mySum (x,y) {
+    if (arguments.length != 2) {
+      var str = "传递的参数个数有误，一共传递了"+arguments.length+"个参数";
+      str += "传递的值分别为: <br>";
+      for(i=0; i<arguments.length; i++){
+        str += "第"+(i+1)+"个参数的值为"+arguments[i]+"<br>";
+      }
+      return str;
+    } else{
+      var z = x*y;
+      return z;
+    }
+  }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

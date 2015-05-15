@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function myFun () {
+    var arrLength = arguments.length;
+    for (var i = 0; i < arguments.length; i++) {
+      for (j=arrLength; j> 1; j--)
+      {
+        if(arguments[j] < arguments[j-1]){
+          temp = arguments[j];
+          arguments[j] = arguments[j-1];
+          arguments[j-1] = temp;
+        }
+      }
+    }
+    for(i =0; i<arrLength; i++){
+      document.write(arguments[i] + " ");
+    }
+  }
+  myFun(2, 213,4,665,7,8,3,23,5,546,76);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
