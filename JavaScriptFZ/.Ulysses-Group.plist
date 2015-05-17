@@ -75,6 +75,48 @@
 		<array>
 			<string>6.4.3.js</string>
 		</array>
+		<array>
+			<string>6.5.5.js</string>
+		</array>
+		<array>
+			<string>6.6.1.js</string>
+		</array>
+		<array>
+			<string>6.6.2.constructor.js</string>
+		</array>
+		<array>
+			<string>6.6.3.js</string>
+		</array>
+		<array>
+			<string>6.6.4.js</string>
+		</array>
+		<array>
+			<string>6.6.5.js</string>
+		</array>
+		<array>
+			<string>6.6.6.js</string>
+		</array>
+		<array>
+			<string>6.6.7.js</string>
+		</array>
+		<array>
+			<string>6.6.8.js</string>
+		</array>
+		<array>
+			<string>6.7.1.arguments.js</string>
+		</array>
+		<array>
+			<string>6.7.2.boolean.js</string>
+		</array>
+		<array>
+			<string>6.7.3.js</string>
+		</array>
+		<array>
+			<string>1.6.1.js</string>
+		</array>
+		<array>
+			<string>1.6.3.js</string>
+		</array>
 	</array>
 </dict>
 </plist>

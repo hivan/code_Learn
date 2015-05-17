@@ -103,7 +103,7 @@ Notype
 - String
 - Null
 - Undefined
-		 　　　
+		  　　　
 #### 有效范围
 - 全局
 - 局部 （函数体内）
@@ -384,6 +384,92 @@ JS没有正式“类”的概念，可以理解为构造函数就是类，使用
 
 #### 继承
 #### 对象自己的方法和属性
+#### 方法与属性的覆盖
+#### 原型对象
+1. 什么是原型对象
+2. 原型对象的原理
+3. 修改对象原型　　
+`函数.prototype.属性 = "参数";`
+`constructor`用于返回对象的构造函数
+4. 存储对象属性
+只有读取对象属性时，才回使用到原型对象，存储对象属性，是不需要使用原型对象的。
+
+### 6.6 Object对象
+#### 创建Object对象
+	new Object();
+	new Object(value);
+如果没有制定value值，则Object不属于数组，也不属于布尔对象。
+
+#### constructor属性: 返回对象的构造函数
+`typeof`运算符判断操作数的类型，无法判断对象的类型。
+`constructor`属性可以判断一个对象的类型，其引用的是对象的构造函数
+
+实际使用中很少查看对象类型，而是通过if来判断是否属于某种类型
+
+#### toString()方法，对象的字符串表示
+`object.toString()`
+
+#### toLocaleString()方法，返回对象的本地字符串表示
+和`toString()`类似，但是格式转化成适合本地的表示法
+
+#### propertyIsEnumerable()方法
+判断属性是否方法所自有的
+`object.propertyIsEnumerable(properyname)`
+properyname为对象的属性名
+- properyname必须是object的属性
+- properyname不能是继承过来的属性
+- properyname是可以通过`for...in`语句循环所枚举得到的属性
+满足以上三点时候才回返回`true`
+
+#### hasOwnProperty()方法:判断属性是否非继承的
+与`propertyIsEnumerable`方法类似，判断一个属性是否非继承的属性。
+
+`object.hasOwnProperty(properyname)`
+
+- properyname必须是object的属性
+- properyname不能使继承过来的
+
+#### isPrototypeOf()方法：判断是否原型对象
+判断一个对象是否另一个对象的原型对象
+`object.prototype.isPrototypeOf(object1)`
+
+#### valueOf()方法，返回对象的原始值
+返回与对象相关的原始值，如果原始值不存在，则返回对象本身
+`object.valueOf()`
+
+### 6.7 其他系统对象
+
+#### Arguments对象
+`callee`属性: 对当前正在执行的函数的引用
+`length`属性: 传递给函数的实际参数的个数
+
+#### 布尔对象
+1. 创建布尔对象和转换布尔值
+	调用Boolean构造函数来创建一个布尔对象，将参数转换成一个布尔值
+	`new Boolean(value)`
+	只是将弃参数转换成一个布尔值
+	`Boolean(value)`
+
+2. toString(),将布尔对象转换成字符串
+3. value()，返回布尔对象的布尔值
+
+#### 日期对象
+1. 创建日期对象
+	new Date();
+	new Date(str);
+	new Date(year,month, day, hours, minutes, seconds, milliseconds);
+	new Date(milliseconds);
+
+- str: 表示日期的字符串
+- year: 代表年份的数据
+- month: 代表月份的数据
+- day: 代表日期的数据
+- hours: 代表小时的数据
+- minutes: 代表分钟的数据
+- seconds: 代表秒钟的数据
+- milliseconds: 代表毫秒的数据
+- milliseconds1: 代表距离1970年1月1日0点时的毫秒数　
+
 
 [1]:	https://www.evernote.com/shard/s5/nl/545318/21405b6e-48b2-4dfa-a8f8-0f0b4d31f763/?csrfBusterToken=U%3D85226%3AP%3D%2F%3AE%3D14d41aa6063%3AS%3D18a649e9eb6f294c7d188c0db72f569e
 [2]:	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
