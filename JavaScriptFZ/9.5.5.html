@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  <!--
+    function openWindow (sURL) {
+      var myWindow = window.open(sURL, "myWin", "width=200, height=100");
+      myWindow.focus()
+    }
+    function openBlurWindow (sURL) {
+      var myWindow = window.open(sURL, "", "width=200, height=100");
+      myWindow.blur();
+    }
+  -->
+  </script>
+</head>
+<body>
+  <a href="#" onclick="window.open('window_1.html', 'myWin', 'width=200, height=100')">打开第1个窗口</a><br>
+  <a href="#" onclick="window.open('window_2.html', 'myWin', 'width=200, height=100')">打开第2个窗口</a><br>
+  <a href="#" onclick="openWindow('window_3.html')">打开第3个窗口</a><br>
+  <a href="#" onclick="openBlurWindow('window_4.html')">打开第4个窗口</a><br>
+</body>
+</html>

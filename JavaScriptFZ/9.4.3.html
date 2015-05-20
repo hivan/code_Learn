@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript" charset="utf-8">
+  window.defaultStatus = "我是默认信息";
+  function setStatus (message) {
+    window.status = message;
+    console.log(message);
+    return true;
+  }
+  </script>
+</head>
+<body>
+  <a href="9.4.2.html">没有设置状态栏瞬间信息的超链接</a>
+  <a href="9.4.2.html" onmouseover="return setStatus('第二个超链接')">设置了状态栏瞬间信息</a><br><br><br><br><br><br>
+  <a href="9.4.2.html" onmouseover="setStatus('第三个超链接')">设置了状态栏瞬间信息，但是没有返回值</a><br><br><br><br><br><br><br>
+  <input type="button" name="myButon" value="button" onmouseover="setStatus('我是一个那扭')">
+</body>
+</html>

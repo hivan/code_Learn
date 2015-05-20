@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>window close</title>
+  <script type="text/javascript">
+  var myWin;
+
+  function openWindow () {
+    myWin = window.open("9.5.2-1.html", "myWindow", "width=300, heigt=300");
+    document.write(myWin);
+  }
+
+  function closeWindow () {
+    if(myWin == undefined){
+      alert('没有打开新窗口，请先点击"open window"');
+    }else if(myWin.closed){
+      alert('窗口已经关闭')
+    }else{
+      myWin.close();
+    }
+  }
+  </script>
+</head>
+<body>
+  <input type="button" value="open window" onclick="openWindow()">
+  <input type="button" value="close window" onclick="closeWindow()">
+</body>
+</html>

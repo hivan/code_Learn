@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>error</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  // 当返回值为true,则不现实错误信息
+  window.onerror=killErr;
+  function killErr () {
+    return true;
+  }
+  // 以下是一个错误语句，因为变量a和b没有定义
+  var err = a*b;
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

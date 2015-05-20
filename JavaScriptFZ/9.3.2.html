@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>confirm()</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+    function checkData () {
+      if(myForm.myName.value.length == 0 || myForm.myPassword.value.length == 0){
+        if(confirm('您的表单未填写完毕，是否确认提交？')){
+          return true;
+        }else{
+          return false;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <form name="myForm" action="9.3.1.html" onsubmit="return checkData()">
+    name: <input type="text" name="myName" value="" placeholder=""><br>
+    password: <input type="password" name="myPassword" value="" placeholder=""><br>
+    <input type="submit" name="mySubmit" value="Submit"><br> 
+    <input type="reset" name="myReset" value="Reset">
+
+  </form>
+</body>
+</html>

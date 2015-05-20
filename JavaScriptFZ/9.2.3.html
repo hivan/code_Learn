@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  for (var i = 0; i < 100; i++) {
+    document.write("第"+(i+1)+"行文字<br>");
+  }
+
+  // 以下代码用于滚屏
+  var pos, timer;
+  // 初始化
+  function initialize () {
+    timer = setInterval("windowscroll()", 200);
+  }
+  // 滚动屏幕
+  function windowscroll () {
+    pos = document.body.scrollTop;
+    window.scroll(0, ++pos);
+    if(pos != document.body.scrollTop){
+      myScroll();
+    }
+  }
+  // 停止滚动屏幕
+  function myScroll () {
+    clearInterval(timer);
+  }
+  </script>
+</head>
+<body onfocus="initialize()" onblur="myScroll()">
+  
+</body>
+</html>

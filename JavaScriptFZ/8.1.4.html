@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML文档</title>
+
+</head>
+<body>
+  <form action="" name="myForm">
+    姓名: <input type="text" name="myName" value="name"><br>
+    性别: <input type="radio" name="mySex" value="男" placeholder="">男
+    <input type="radio" name="mySex" value="女" placeholder="">女<br>
+    城市: <select name="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>}
+      <option value="广州">广州</option>}
+    </select><br>
+    <input type="submit" name="mySubmit" value="提交" placeholder="">
+  </form>
+  <script type="text/javascript">
+    window.document.myForm.myName.value="My Test Text";
+    window.document.myForm.mySex[0].checked="checked";
+    window.document.myForm.city.options[0].text = "深圳";
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<form name="myForm">
+<input type="text" name="myText1" value="第一个文本框" placeholder="">
+<input type="text" name="myText2" value="第二个文本框" placeholder="">
+<input type="button" name="myButton" value="按钮">  
+</form>
+<script type="text/javascript">
+    function btClick () {
+      alert("你点击了一个按钮");
+    }
+    window.document.forms[0].elements[2].onclick = btClick;
+    function textValue () {
+      return "函数返回值";
+    }
+    document.forms[0].elements[0].value = textValue(); 
+</script>
+
+</body>
+</html>

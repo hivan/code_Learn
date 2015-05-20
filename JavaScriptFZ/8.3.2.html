@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function mousemove () {
+    // screenx文本框中显式鼠标的X座标
+    document.myForm.screenx.value=event.screenX;
+    // screeny文本框中显式鼠标的Y轴座标
+    document.myForm.screeny.value= event.screenY;
+  }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    <img src="image/4d497defb06c763e493c2f8dbfa0df41.jpg" height="500" alt="" onmousemove="mousemove()"><br>
+    座标: <input type="text" name="screenx" size="5" value="" placeholder=""><input type="text" name="screeny" size="5" value="" placeholder=""><br>
+    <input type="text" name="myText1" value="鼠标经过时产生事件" onmouseover="alert('鼠标经过')">
+    <input type="text" name="myText2" value="鼠标离开时产生事件" placeholder="" onmouseout="alert('鼠标离开')">
+  </form>
+</body>
+</html>

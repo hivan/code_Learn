@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <form name="myForm">
+    x: <input type="text" name="scrollX" value="10" size="5" placeholder=""><br>
+    y: <input type="text" name="scrollY" value="10" size="5" placeholder=""><br>
+    <input type="button" name="" value="滚动到绝对位置" onclick="Goto()">
+    <input type="button" name="" value="滚动到相对位置" onclick="Goby()">
+  </form>
+  <pre>
+    <script type="text/javascript">
+    // 网页中输出100行文字
+    for( var i=0; i<100; i++){
+      document.write("第"+(i+1)+"行文字");
+      // 输出空格，产生横向滚动条
+      for (var j = 0; j < 100; j++) {
+         document.write("&nbsp;&nbsp");
+      }
+      document.write("<br>");
+    }
+    function Goto () {
+      window.scrollTo(myForm.scrollX.value, myForm.scrollY.value);
+    }
+    function Goby () {
+      window.scrollBy(myForm.scrollX.value, myForm.scrollY.value);
+    }
+    </script>
+  </pre>
+</body>
+</html>

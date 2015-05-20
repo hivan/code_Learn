@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function outText1 (obj) {
+    alert(obj.value);
+  }
+  function outText2 (str) {
+    alert(str);
+  }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    <input type="text" name="myText1" value="第一个文本框" onclick="outText1(this)">
+    <input type="text" name="myText2" value="第二个文本框" placeholder="" onclick="outText2(this.value)">
+    <input type="text" name="myText3" value="第三个文本框" placeholder="" onclick="outText1(myForm.myText3)">
+    <input type="text" name="myText4" value="第四个文本框" onclick="outText2(myForm.myText4.value)">
+  </form>
+</body>
+</html>

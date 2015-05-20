@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function keypress () {
+    if (myForm.myText1.value.length >= 5) {
+      alert("您只能输入五个字符");
+      return false;
+    }
+  }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    <input type="text" name="myText1" value="" placeholder="" onkeypress="return keypress()">
+    
+    <input type="text" name="myText3" value="" placeholder="" onkeydown="return keypress()">
+    <input type="text" name="myText2" value="" placeholder="" onkeyup="return keypress()">
+  </form>
+</body>
+</html>

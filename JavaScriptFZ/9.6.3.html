@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  // times变量用来计时
+  var times;
+  // intervalid变量用来返回setInterval()方法的值，根据该值可以停止周期执行代码
+  var intervalid;
+  function showName () {
+    // 设置3秒后弹出警告框
+    times = 3;
+    // 初始化倒计时文本框中的文字
+    myForm.showTime.value=times;
+    // 每隔一秒执行一次setTime()函数；即让倒计时文本框中的数字倒计时
+    intervalid = setInterval('setTime()', 1000);
+  }
+  function setTime () {
+    // 倒计时减少1；
+    times--;
+    // 倒计时时文本框中现实剩余事件
+    myForm.showTime.value = times;
+    // 判断剩余事件是否为0
+    if(times == 0){
+      // 为0时停止倒计时
+      clearInterval(intervalid);
+      alert("您的姓名为: "+myForm.myName.value);
+    }
+  }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    name: <input type="text" name="myName" value="Hivan" placeholder="">
+    <input type="button" name="mybutton" value="确定" onclick="showName()"><br>
+    <input type="text" name="showTime" value="3" placeholder="" size="1">秒后弹出警告框
+  </form>
+</body>
+</html>

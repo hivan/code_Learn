@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function formSubmit () {
+    // 查看表单中的元素个数
+    var formLength = document.forms[0].elements.length;
+    // 通过循环判断是否所有文本框中都输入了文字
+    // 由于最后一个元素是按钮，所以变量i为小于formLength-1
+    for (var i = 0; i < formLength-1; i++) {
+      // 如果有一个文本框没有输入文字，返回false
+      if(document.forms[0].elements[i].value.length == 0){
+        alert("第"+(i+1)+"个文本框没有输入内容");
+        return false;
+      }
+    };
+  }
+  </script>
+</head>
+<body>
+  <form action="" method="get" accept-charset="utf-8" name="myForm" action="submit.html" onSubmit="return formSubmit()">
+  name: <input type="text" name="myName" value="输入姓名" placeholder=""><br>
+  password: <input type="text" name="myPassword" value="输入密码" placeholder=""><br>
+  <input type="submit" name="mySubmit" value="提交">
+  </form>
+</body>
+</html>
