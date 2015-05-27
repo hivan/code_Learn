@@ -1199,6 +1199,58 @@ load参数为布尔值，
 ## 第十一章 历史对象和地址对象
 
 ### 11.1 历史对象
+#### 历史对象的属性
+History对象的属性只有一个，用于查看客户端浏览器窗口的历史列表中访问过的网页个数:
+	history.length
+
+#### 历史对象的方法
+- back()
+- forward()
+- go() 该方法可以直接跳转到某一个已经访问过的URL。包含两个参数，一种参数是要访问的URL在历史列表中的相对位置，另一种参数为要访问的URL的字串
+#### 前进和后退
+#### 跳转
+	history.go()可以让当前页刷新一次
+### 11.2 地址对象
+#### URL介绍
+URL(Uniform Resource Locators) “统一资源定位器”
+URL可以由协议，域名或IP，端口，虚拟路径，文件名，参数以及锚7个部分组成
+
+1. 协议与域名
+	常用协议
+	- HTTP 超文本协议
+			http://
+	- FTP 文件传输协议
+			ftp://
+	- mailto 发送电子邮件
+			mailto:
+	- new 新闻组
+			news://
+	- gopher 信息查访
+			gopher://
+	- file 本地文件
+			file://
+	- JavaScript JS程序代码
+			javascript:alert(“”);
+	- view-source 查看网页源代码，该协议IE浏览器和Opera浏览器已经不再支持，但是Netscape浏览器和Firefox还支持　
+			view-source:file://
+2. 端口
+	HTTP协议默认端口为80, FTP为21
+3. 文件名
+4. 虚拟目录
+5. 锚
+6. 参数
+	参数名和文件名是用`?`号隔开，多个参数之间用`&`隔开，锚放在参数后
+
+#### 地址对象的属性
+- protocol 返回当前文档URL的协议部分，包括其他的冒号
+- hostName 返回当前文档URL的域名部分
+- port 返回当前文档URL的端口部分
+- host 返回当前文档的URL的域名部分和端口部分
+- pathname 返回当前文档URL的虚拟目录和文件名部分
+- hash 返回当前文档URL的锚部分
+- search 返回当前文档URL的参数部分，包括”?”
+- href 返回当前文档的完整的URL
+
 
 [1]:	https://www.evernote.com/shard/s5/nl/545318/21405b6e-48b2-4dfa-a8f8-0f0b4d31f763/?csrfBusterToken=U%3D85226%3AP%3D%2F%3AE%3D14d41aa6063%3AS%3D18a649e9eb6f294c7d188c0db72f569e
 [2]:	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
