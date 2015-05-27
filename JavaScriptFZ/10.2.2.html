@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+
+  document.write(navigator.cookieEnabled+"; <br>"+navigator.language+"; <br>"+navigator.mimeTypes.length+"; <br>"+navigator.plugins.length+"<br>");
+  for(i = 0; i <navigator.mimeTypes.length; i++){
+    document.write("数据类型的名称: "+navigator.mimeTypes[i].type+"<br>");
+    document.write("数据类型的描述: "+navigator.mimeTypes[i].description+"<br>");
+    document.write("使用该数据类型的文件的扩展名: "+navigator.mimeTypes[i].suffixes+"<br><br>")
+  }
+
+  if (navigator.mimeTypes["video/quicktime"]!= null) {
+    document.write("浏览器支持QuickTime类型的文件 <br>");
+  }else{
+    document.write("不支持QuickTime <br>");
+  }
+  if (navigator.mimeTypes["video/x-ms-asf"] != null) {
+    document.write("支持asf类型");
+  }else{
+    document.write("不支持asf类型文件 <br><br>");
+  }
+
+  for(j = 0; j<navigator.plugins.length; j++){
+    document.write("插件名称"+navigator.plugins[j].name+"<br>");
+    document.write("插件支持的数组格式个数: "+navigator.plugins[j].length+"<br>");
+    document.write("插件说明: "+navigator.plugins[j].description+"<br><br>");
+  }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

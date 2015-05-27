@@ -1174,6 +1174,31 @@ Netscape支持的Navigator对象属性
 - mimeType 返回一个数组，数组中的元素代表浏览器支持的MIME类型
 - plugins 返回一个数组，数组的元素代表浏览器已经安装的插件
 #### 浏览器对象的子对象
+在Netscape中，NuneType和Plugin是Navigator对象的子对象。
+1. MimeType对象
+	- description 返回MimeType对象的描述
+	- enabledPlugin 该属性返回一个数组，数组中的元素为Plugin对象。该数组用于说明有那些插件支持该数据格式，如果没有插件支持则返回null
+	- suffixes 该属性返回MIME类型文件的扩展名
+	- type 该属性返回MIME类型的名称，该名称是唯一可以哟哦拿过来描述当前MIME类型的字符串
+2. Plugin对象
+	- description 插件的说明
+	- filename 插件程序的文件名
+	- length 插件所支持的MIME数据格式的个数
+	- name　插件的名称
+#### MimeType对象与Plugin对象互查
+MimeType对象的enbledPlugin属性返回的就是Plugin对象，而Plugin数组中的元素就是MimeType对象
+
+#### 浏览器对象的方法
+只有一个判断是否启用了JAVA的方法
+	navigator.javaEnabled
+
+除此之外，Netscape浏览器还支持一个启用新安装插件的方法:
+	navigator.plugins.refresh(load)
+load参数为布尔值，
+
+## 第十一章 历史对象和地址对象
+
+### 11.1 历史对象
 
 [1]:	https://www.evernote.com/shard/s5/nl/545318/21405b6e-48b2-4dfa-a8f8-0f0b4d31f763/?csrfBusterToken=U%3D85226%3AP%3D%2F%3AE%3D14d41aa6063%3AS%3D18a649e9eb6f294c7d188c0db72f569e
 [2]:	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence

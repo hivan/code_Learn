@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  if (navigator.mimeTypes["application/x-shockwave-flash"] != null) {
+    // navigator.mimeTypes属性是一个数组
+    // navigator.mimeTypes["application/x-shockwave-flash"]是数组中的一个元素，代表浏览器支持的MIME类型，本例中该MIME类型为"application/x-shockwave-flash"
+    // navigator.mimeTypes["application/x-shockwave-flash"].enablePlugin是对plugin对象的引用。该plugin对象可以支持MIME类型为"application/x-shockwave-flash"的文件
+    document.write("支持Flash文件的插件为: "+navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin.name+"<br><br>");
+  }else{
+    document.write("该浏览器不支持Flash文件 <br>");
+  }
+  if (navigator.plugins["Shockwave Flash"]!= null) {
+    document.write("该浏览器安装了Flash插件，Flash插件可以打开以下扩展名的文件 <br>");
+    for(i = 0; i<navigator.plugins["Shockwave Flash"].length; i++){
+      document.write("."+navigator.plugins["Shockwave Flash"][i].suffixes+"&nbsp;&nbsp;");
+    }
+  };
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
