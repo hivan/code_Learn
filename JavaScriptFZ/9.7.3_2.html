@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>框架页</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <iframe src="9.7.2.html" height="250" width="400"></iframe><br>
+  <input type="button" name="更新内容按钮" value="upDate()">
+  <script type="text/javascript">
+  function upDate () {
+    for (var i = 0; i < window.frames.length; i++) {
+      for(j=0; j<window.frames[i].frames.length; j++){
+        window.frames[i].frames[j].document.write("这是第"+(j+1)+"个子窗口的内容");
+        window.frames[i].frames[j].document.close();
+      }
+    };
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>延迟执行</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  var intervalid;
+  function showName () {
+    intervalid=setTimeout("alert('Your name is: '+myForm.myName.value)", 3000);
+  }
+  function showNameStop () {
+    clearTimeout(intervalid);
+  }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    name: <input type="text" name="myName" value="Hivan" placeholder="">
+    <input type="button" name="myButton" value="确定" onclick="showName()">
+    <input type="button" name="myButton1" value="取消弹出警告框" onclick="showNameStop()">
+  </form>
+</body>
+</html>

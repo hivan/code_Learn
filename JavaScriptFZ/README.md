@@ -103,7 +103,7 @@ Notype
 - String
 - Null
 - Undefined
-			 　　　
+			   　　　
 #### 有效范围
 - 全局
 - 局部 （函数体内）
@@ -999,7 +999,7 @@ window中的`defaultStatus`属性和`status`属性可以控制状态栏中的信
 通常展示的信息有两种:
 - 加载的文件和进度
 - 超链接的URL
-	　　　
+	  　　　
 #### 默认状态栏信息
 defaultStatus
 #### 状态栏瞬间信息
@@ -1086,6 +1086,94 @@ hover的时候的URL信息就是瞬间信息，使用status属性
 	window.clearInterval(id)
 clearInterval()根据该返回值`id`来决定停止哪个setInterval()方法
 
+#### 取消延迟执行
+	window.clearTimeout(id)
+
+### 9.7 框架操作
+
+JS中并不存在Frame对象，所谓的Frame对象只是Window对象的一个实例。该对象拥有Window对象的所有方法和属性及事件。
+
+#### 框架介绍
+
+#### 框架的数量
+Window对象有一个frames属性，该属性是个数组，数组中的元素代表框架中包含的窗口。
+
+#### 父窗口与子窗口
+#### 窗口之间的关系
+1. 框架关系中常用到的属性
+	- self 代表当前窗口
+	- parent 代表当前窗口的父级窗口
+	- top 代表当前窗口的顶级窗口
+2. 一个复杂的框架
+
+3. 框架自身的引用
+	以下三句的作用相同
+		self.document.write()
+		window.document.write()
+		document.write()
+4. 父窗口对子窗口的引用　
+5. 子窗口对父窗口及其他窗口的引用
+6. 对顶级窗口的引用
+
+### 9.8 Window对象的子对象
+包括Document, History, Location, Math, Navigator对象和Screen对象等
+#### Document对象
+HTML文档
+#### History对象
+窗口的浏览历史
+#### Location对象　　
+当前文档的URL
+#### Math对象
+
+#### Navigator对象
+#### Screen对象
+显示器信息
+
+### 9.9 IE浏览器中的方法和属性
+#### IE浏览器中的方法
+1. navigate(url)
+2. print()
+#### IE浏览器中的属性
+1. event
+2. clientInformation
+### 9.10 Netscape浏览器中的方法和属性
+#### 方法
+#### 属性
+#### 事件　
+
+## 第十章 屏幕对象与浏览器对象
+### 10.1 屏幕对象
+#### 屏幕对象的属性
+Screen对象是一个JS自动创建的对象，描述客户端显示器的信息。是一个全局对象，只读。
+- height
+- width
+- colorDepth
+- availHeight
+- availWidth
+#### 客户端显示器屏幕分辨率
+#### 客户端显示器屏幕的有效宽度和高度
+#### 颜色深度
+#### 综合应用
+### 10.2 浏览器对象
+Navigator对象也叫浏览器对象，包含了浏览器的整体信息。
+
+#### 浏览器对象属性
+Navigator对象的属性
+- appName 浏览器名称
+- appVersion 浏览器版本号
+- userAgent 浏览器用于HTTP请求的用户代理头的值
+- appCodeName 浏览器的代码名
+- platform 运行浏览器的操作系统或硬件平台
+IE支持的Navigator对象属性
+- cookieEnabled 检查浏览器是否支持cookie
+- systemLanguage 系统哦那个默认语言
+- userLanguage 返回用户使用的语言
+Netscape支持的Navigator对象属性
+- cookieEnabled 
+- language 返回浏览器中使用的默认语言
+- mimeType 返回一个数组，数组中的元素代表浏览器支持的MIME类型
+- plugins 返回一个数组，数组的元素代表浏览器已经安装的插件
+#### 浏览器对象的子对象
 
 [1]:	https://www.evernote.com/shard/s5/nl/545318/21405b6e-48b2-4dfa-a8f8-0f0b4d31f763/?csrfBusterToken=U%3D85226%3AP%3D%2F%3AE%3D14d41aa6063%3AS%3D18a649e9eb6f294c7d188c0db72f569e
 [2]:	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
