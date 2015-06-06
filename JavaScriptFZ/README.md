@@ -1687,6 +1687,23 @@ ex: `Sat, 15 Sep 2015 06:27:12 GMT`
 cookie默认只能被同路径或子路径页面读取，如果要网站其他目录的文件也能读取，需要使用path设置cookie的路径
 设置path方法与设置expires的方法类似，使用分号与其他参数分割开来就可以了
 
+### 14.7 cookie的domain
+解决同域下不同网址访问问题，需要设置cookie的domain，和设置path方法类似
+`";domain=.hivan.me"
+`
+### 14.8 cookie的secure
+设置了cookie的secure，那么只能被HTTPS协议或其他安全协议传输，secure是一个布尔值
+
+### 14.9 cookie的使用注意事项
+- cookie并不是十分安全
+- cookie存放的数据最多不能超过4kb
+- cookie文件最多存储300个cookie
+- 每个服务器(www.hivan.me和blog.hivan.me算两个服务器)最多不能超过20个cookie文件
+- cookie的生存期是以毫秒为单位计算的
+- 客户端浏览器可以设置拒绝cookie
+
+	　　
+
 [1]:	https://www.evernote.com/shard/s5/nl/545318/21405b6e-48b2-4dfa-a8f8-0f0b4d31f763/?csrfBusterToken=U%3D85226%3AP%3D%2F%3AE%3D14d41aa6063%3AS%3D18a649e9eb6f294c7d188c0db72f569e
 [2]:	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 [3]:	https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators

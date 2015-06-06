@@ -6,13 +6,11 @@
   <title></title>
   <link rel="stylesheet" href="">
   <script type="text/javascript">
-  // 获取现在时间
     var now = new Date();
-    // cookie保留一天
-    now.setDate(now.getDate()+1);
-    var cookies = "userName="+escape("Hivan")+";expires="+now.toGMTString()+";path=/";
+    now.setDate(now.getDate() + 1);
+    var cookies = "userName="+escape("Hivan")+"; expires=" + now.toGMTString()+";secure";
     document.cookie = cookies;
-    document.write("cookie文件中的内容为: <br>"+unescape(document.cookie));
+    document.write("cookie文件中的内容为: <br>",unescape(document.cookie));
   </script>
 </head>
 <body>
