@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>显示图片信息</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  本例可以现实图片的信息: <br>
+  <img src="image/4d497defb06c763e493c2f8dbfa0df41.jpg" height="1065" width="736" alt="" border="2" hspace="10" vspace="30" name="myImg" lowsrc="image/4d497defb06c763e493c2f8dbfa0df41low.jpg" align="left">
+  这是一张由笔者自己排的照片 <br><br>
+  <script type="text/javascript">
+  document.write("图片的属性如下: ");
+  document.write("图片名称为: ", document.myImg.name,"<br>");
+  document.write("宽度: ",document.myImg.width,"<br>");
+  document.write("高度: ",document.myImg.height,"<br>");
+  document.write("边框: ", document.myImg.border, "<br>");
+  document.write("与文字水平方向的间距: ",document.myImg.hspace,"<br>");
+  document.write("与文字垂直方向的间距: ", document.myImg.vspace,"<br>");
+  document.write("URL: ", document.myImg.src,"<br>");
+  document.write("低质量图片:", document.images[0].lowsrc);
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  document.write("1. 简单的文字输出")
+  document.write("本行是在JS中输出的文字 <br>");
+  document.writeln("本行也是在JS中输出的文字 <br>");
+  document.write("2. 多个字符串链接后输出")
+  var str = "由JS输出的文字";
+  document.write(str, "<br>");
+  document.writeln(str, "<br>");
+
+  </script>
+</head>
+<body>
+<pre>
+  <script type="text/javascript">
+    document.write("3. write()和writeln()之间的区别");
+    document.write("使用write()方法");
+    document.write("产生的文字");
+    document.writeln("使用writeln()方法");
+    document.writeln("产生的文字");
+
+    function outText () {
+      var myStr = myForm.myText.value;
+      document.writeln("4. 注意事项")
+      document.write("您输入的内容为: "+myStr);
+    }
+  </script>
+</pre>  
+  本行是HTML中的文字
+  <form name="myForm">
+    <input type="text" name="myText" value="Hivan" placeholder="">
+    <input type="button" name="submit" value="submit" onclick="outText()">
+  </form>
+</body>
+</html>

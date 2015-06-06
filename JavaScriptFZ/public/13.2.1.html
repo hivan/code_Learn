@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function checkForm () {
+    if (document.myForm.myName.value.length == 0) {
+      alert("请输入姓名");
+      return false;
+    }
+    if (document.myForm.mySex.value.length == 0) {
+      alert("请输入性别");
+    }
+    if (document.myForm.myYear.value.length == 0 || document.myForm.myMonth.value.length == 0 || document.myForm.myDay.value.length == 0) {
+      alert("出生日期不完整");
+      return false;
+    }
+    if (document.myForm.myNational.value.length == 0) {
+      alert("请输入您的名族");
+      return false;
+    }
+    if (document.myForm.myBirthplace.value.length == 0) {
+      alert("请输入您的籍贯");
+      return false;
+    }
+  }
+  </script>
+</head>
+<body>
+  <form action="submit.html" method="get" accept-charset="utf-8" name="myForm" onsubmit="return checkForm()">
+    name: <input type="text" name="myName" value="" placeholder=""><br>
+    sex: <input type="text" name="mySex" value="" placeholder=""><br>
+    Borth: <input type="text" name="myYear" value="" placeholder="" size="4">-<input type="text" name="myMonth" value="" placeholder="" size="2"><input type="text" name="myDay" value="" placeholder="" size="2"><br>
+    民族: <input type="text" name="myNational" value="" placeholder=""><br>
+    籍贯: <input type="text" name="myBirthplace" value="" placeholder=""><br>
+    <input type="submit" name="" value="提交">
+    <input type="reset" name="" value="重置">
+  </form>
+</body>
+</html>

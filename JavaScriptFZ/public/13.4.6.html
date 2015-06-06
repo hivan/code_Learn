@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function clearText (textbox) {
+    textbox.focus();
+    if (textbox.value == textbox.defaultValue) {
+      myForm.myText1.value = "";
+    }
+  }
+  </script>
+</head>
+<body>
+  <form name="myForm" action="submit.html">
+    key word: <input type="text" name="myText1" value="请输入文字" placeholder="" size="30" onmouseover="this.select()" onfocus="clearText(this)"> <br>
+    <input type="submit" name="" value="提交" >
+  </form>
+</body>
+</html>

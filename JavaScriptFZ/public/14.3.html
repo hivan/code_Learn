@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+    // 设置cookie
+    function setCookie () {
+      // 设置第一个cookie，即名为cookieName的cookie
+      document.cookie = "cookieName = " + document.myForm.myName.value;
+      // 设置第2个cookie，即名为cookiePassword的cookie
+      document.cookie = "cookiePassword = "+document.myForm.myPassword.value;
+      alert("cookie文件中的内容为: "+document.cookie + "\n"+"cookieName的值:"+getCookieValue("cookieName")+"\ncookiePassword的值为:"+getCookieValue("cookiePassword"));
+    }
+    // 返回cookie的值
+    function getCookieValue (cookieName) {
+      // 读取整个cookie文件中的内容
+      var cookies =document.cookie;
+      // 查找cookie的名在字符串的开始位置
+      var cookieIndex = cookies.indexOf(cookieName+"=");
+      if (cookieIndex != -1) {
+        var cookieValueStart = cookieIndex + cookieName.length + 1;
+        var cookieValueEnd = cookies.indexOf(";", cookieValueStart);
+        if (cookieValueEnd == -1) {
+          cookieValueEnd = cookies.length;
+        }
+        var cookieValue = cookies.substring(cookieValueStart, cookieValueEnd);
+        return cookieValue;
+      }
+    }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    name: <input type="text" name="myName" value="" placeholder=""><br>
+    pass: <input type="password" name="myPassword" value="" placeholder="">
+    <input type="button" name="myButton" value="确定" onclick="setCookie()">
+  </form>
+</body>
+</html>

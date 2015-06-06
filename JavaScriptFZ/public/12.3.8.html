@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>缓存图片</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function changeImg() {
+    // 设置随机数
+    var ran = Math.random();
+    ram = Math.round(ran*10);
+    // 存储在数组中
+    var arr = new Array();
+    // 通过循环，数组中的元素为一个图片对象
+    // 这次存储的是图片而不是地址
+    for(i = 0; i<11; i++){
+      arr[i] = new Image()
+    }
+    arr[0].src = 'image/img01.jpg';
+    arr[1].src = 'image/img02.jpg';
+    arr[2].src = 'image/img03.JPG';
+    arr[3].src = 'image/img04.JPG';
+    arr[4].src = 'image/img05.JPG';
+    arr[5].src = 'image/img06.JPG';
+    arr[6].src = 'image/img07.JPG';
+    arr[7].src = 'image/img08.JPG';
+    arr[8].src = 'image/img09.JPG';
+    arr[9].src = 'image/img10.JPG';
+    arr[10].src = 'image/flower.jpg'
+    document.images[0].src = arr[ram].src;
+  }
+  setInterval("changeImg()", 3000);
+  </script>
+</head>
+<body>
+  <img src="image/flower.jpg" height="202" width="307" alt="">
+</body>
+</html>

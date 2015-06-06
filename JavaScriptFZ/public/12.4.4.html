@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <iframe src="12.4.4_1.html" width="400" height="300" name="sampleWin"></iframe><br>
+  <a href="#" onclick="return pageChange('up')" title="" target="sampleWin">上一个范例</a>&nbsp;
+  <a href="#" target="sampleWin" title=""></a>&nbsp;
+  <a href="#" title="" onclick="return pageChange('down')" target="sampleWin">下一个范例</a>
+  <script type="text/javascript">
+  // 当前页计数
+  var sample = 1;
+  // 初始化信息
+  changeText(1);
+  // 翻页控制
+  function pageChange(changeType) {
+    // 向下翻页
+    if (changeType == 'down') {
+      // 当前页计数自动加1;
+      sample++;
+      // 最大当前页不能大于9，如果大于9则重设为9；
+      if (sample == 10) {
+        sample = 9;
+        alert("已经是最后一页了");
+        return false;
+      }else{
+        // 如果计数器还在1-9范围之内，则设置links属性
+        changeText(sample);
+      }
+    }else if(changeType == "up"){
+      // 当前页计数自动减1
+      sample--;
+      // 最大当前页不能小于1，如果小于1则重设为1;
+      if (sample == 0) {
+        sample = 1;
+        alert("已经是第一页了");
+        return false;
+      }else{
+        // 如果计数器还在1-9范围之内，则设置links属性
+        changeText(sample);
+      }
+    }
+  }
+  function changeText (page) {
+    // 设置链接的URL
+    for(var i = 0; i<document.links.length; i++){
+      document.links[i].href = "sample30_"+page+".html";
+    }
+    // 设置第2个链接的文本，以下设置在IE中有效
+    document.links[1].innerText = "当前网页为: sample30_"+page+".html";
+  }
+  </script>
+</body>
+</html>

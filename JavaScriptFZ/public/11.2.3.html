@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  // 获取当前文档的URL的各部分数据
+  var nowHref = location.href;
+  var nowProtocol = location.protocol;
+  var nowHostname = location.hostname;
+  var nowPort = location.port;
+  var nowHost = location.host;
+  var nowPathname = location.pathname;
+  var nowHash = location.hash;
+  var nowSearch = location.search;
+  // 设置文本框中的默认内容
+  function setText () {
+    myForm.urlHref.value = nowHref;
+    myForm.urlProtocol.value = nowProtocol;
+    myForm.urlHostname.value = nowHostname;
+    myForm.urlPort.value = nowPort;
+    myForm.urlHost.value = nowHost;
+    myForm.urlPathname.value = nowPathname;
+    myForm.urlHash.value = nowHash;
+    myForm.urlSearch.value = nowSearch;
+  }
+  // 修改URL的属性
+  function changeURL () {
+    if (myForm.urlHref.value != nowHref) {
+      location.href=myForm.urlHref.value;
+    }else if(myForm.urlProtocol.value != nowProtocol){
+      location.protocol = myForm.urlProtocol.value;
+    }else if(myForm.urlHostname.value != nowHostname){
+      location.hostname = myForm.urlHostname.value;
+    }else if(myForm.urlPort.value != nowPort){
+      location.port = myForm.urlPort.value;
+    }else if(myForm.urlHost.value != nowHost){
+      location.host = myForm.urlHost.value;
+    }else if (myForm.urlPathname.value != nowPathname) {
+      location.pathname = myForm.urlPathname.value;
+    }else if (myForm.urlHash.value != nowHash) {
+      location.hash = myForm.urlHash.value;
+    }else if (myForm.urlSearch != nowSearch) {
+      location.search = myForm.urlSearch.value;
+    }
+  }
+  </script>
+</head>
+<body>
+  <form action="" name="myForm">
+    当前文档的URL为:  <input type="text" name="urlHref" value="" placeholder="" size="7"><br>
+    当前文档的协议为: <input type="text" name="urlProtocol" value="" placeholder=""><br>
+    当前文档的域名为: <input type="text" name="urlHostname" value="" placeholder=""><br>
+    当前文档的端口号为: <input type="text" name="urlPort" value="" placeholder=""><br>
+    当前文档的域名和端口号为: <input type="text" name="urlHost" value="" placeholder=""><br>
+    当前文档的虚拟目录和文件名为: <input type="text" name="urlPathname" value="" placeholder="" size="50"><br>
+    当前文档的命名锚为: <input type="text" name="urlHash" value="" placeholder=""><br>
+    当前文档的参数为: <input type="text" name="urlSearch" value="" placeholder="" size="50"><br>
+    <input type="button" name="" value="确定" onclick="changeURL()">
+    <input type="button" name="" value="还原" onclick="setText()">
+  </form>
+</body>
+</html>

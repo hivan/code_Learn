@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <form name="myForm">
+    what do u like?<br><br>
+    <input type="checkbox" value="看书" name="like" onclick="return checkDate(this)">看书
+    <br>
+    <input type="checkbox" value="上网" name="like" onclick="return checkDate(this)">上网
+    <br>
+    <input type="checkbox" value="看电视" name="like" onclick="return checkDate(this)">看电视
+    <br>
+    <input type="checkbox" value="下棋" name="like" onclick="return checkDate(this)">下棋
+    <br>
+    <input type="checkbox" value="钓鱼" name="like" onclick="return checkDate(this)">钓鱼
+    <br>
+    <input type="checkbox" value="打牌" name="like" onclick="return checkDate(this)">打牌
+    <br>
+    <input type="checkbox" value="发呆" name="like" onclick="return checkDate(this)">发呆
+    <br>
+  </form>
+  <script type="text/javascript">
+  function checkDate (checkBoxname) {
+    var checkCount = 0;
+    for (var i = 0; i < document.myForm.like.length; i++) {
+      if (document.myForm.like[i].checked) {
+        checkCount ++;
+      }
+    }
+    if (checkCount > 3) {
+      alert("最多只能选择三项");
+      return false;
+    }
+  }
+  </script>
+</body>
+</html>

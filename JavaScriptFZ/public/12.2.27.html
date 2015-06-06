@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <iframe height="150" width="350"></iframe><br>
+  <script type="text/javascript">
+  window.frames[0].document.open();
+  window.frames[0].document.writeln("<html>");
+  window.frames[0].document.writeln("<body>");
+  window.frames[0].document.writeln("<font color=red> 这是子窗口的内容</font>");
+  window.frames[0].document.writeln("</body>");
+  window.frames[0].document.writeln("</html>");
+  window.frames[0].document.close();
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function setDoc () {
+    document.bgColor = document.myForm.bgcolor.value;
+    document.fgColor = document.myForm.fgcolor.value;
+  }
+  </script>
+</head>
+<body bgcolor="black" text="white">
+  <form name="myForm">
+    网页背景颜色: <input type="text" name="bgcolor" value="red" placeholder=""><br>
+    文字默认颜色: <input type="text" name="fgcolor" value="blue" placeholder=""><br>
+    <input type="button" name="" value="确定" onclick="setDoc()">
+    <font color="green">设置为绿色的文字</font>
+
+  </form>
+</body>
+</html>

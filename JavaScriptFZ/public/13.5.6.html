@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function resizetextarea (resizeType) {
+    if (resizeType == 'big') {
+      if (document.myForm.Context.rows < 40) {
+        document.myForm.Context.rows += 5;
+      }
+    }else if (resizeType == 'small') {
+      if (document.myForm.Context.rows > 5) {
+        document.myForm.Context.rows -= 5;
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <form action="submit.html" name="myForm">
+    <input type="button" name="" value="+" onclick="resizetextarea('big')"><input type="button" name="" value="-" onclick="resizetextarea('small')"><br>
+    <textarea name="Context" rows="10" cols="30"></textarea>
+  </form>
+</body>
+</html>

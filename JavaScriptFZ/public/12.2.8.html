@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function writeText (myWin) {
+    myWin.document.writeln("<HTML>");
+    myWin.document.writeln("<HEAD>");
+    myWin.document.writeln("<TITLE>");
+    myWin.document.writeln("新开文档");
+    myWin.document.writeln("</TITLE>");
+    myWin.document.writeln("</HEAD>");
+    myWin.document.writeln("<BODY>");
+    myWin.document.writeln("<font color='red'>");
+    myWin.document.writeln("这是使用JS创建的网页");
+    myWin.document.writeln("</font>");
+    myWin.document.writeln("</BODY>");
+    myWin.document.writeln("</HTML>");
+  }
+  function outHTML () {
+    var htmlWin = window.open("" , "myHTML", "width=300, height=300, resizable=yes");
+    htmlWin.document.open("text/html");
+    writeText(htmlWin);
+  }
+  function outText () {
+    var textWin = window.open("","mytext", "width=300, height=300, resizable=yes");
+    textWin.document.open("text/plain");
+    writeText(textWin);
+  }
+  </script>
+</head>
+<body>
+  <input type="button" name="myButton1" value="在新敞口打开一个HTML文档" onclick="outHTML()">
+  <input type="button" name="myButton2" value="在一个新创口打开TEXT文档" onclick="outText()">
+</body>
+</html>

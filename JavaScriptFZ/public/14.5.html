@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+    if (document.cookie == "") {
+      document.write("当前没有cookie");
+    }else{
+      document.write("cookie文件中的内容为: <br>");
+      document.write(document.cookie, "<br>");
+      document.write("cookieName的值为:", getCookieValue("cookieName"), "<br>");
+      document.write("cookiePassword的值为: ", getCookieValue("cookiePassword"),"<br>");
+    }
+    function setCookie () {
+      var cookie1 = "cookieName="+escape(document.myForm.myName.value);
+      var cookie2 = "cookiePasswrod="+escape(document.myForm.myPassword.value);
+      if (myForm.cookieDate.value != 0) {
+        var now = new Date();
+        now.setDate(now.getDate()+parseInt(myForm.cookieDate.value));
+        cookie1 = cookie1+";expires="+now.toGMTString();
+        cookie2 = cookie2+"; expires="+now.toGMTString();
+      }
+      document.cookie = cookie1;
+      document.cookie = cookie2;
+    }
+    function getCookieValue (cookieName) {
+      var cookies = unescape(document.cookie);
+      var cookieIndex = cookies.indexOf(cookieName+"=");
+      if (cookieIndex!=-1) {
+        var cookieValueStart = cookieIndex + cookieName.length + 1;
+        var cookieValueEnd = cookies.indexOf(";",cookieValueStart);
+        if (cookieValueEnd == -1) {
+          cookieValueEnd = cookies.length;
+        };
+        var cookieValue = cookies.substring(cookieValueStart,cookieValueEnd);
+        return cookieValue;
+      };
+    }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    name: <input type="text" name="myName" value="" placeholder=""><br>
+    pass: <input type="text" name="myPassword" value="" placeholder=""><br>
+    选择cookie的保留时间:
+    <select name="cookieDate">
+      <option value="1">一天</option>
+      <option value="30">30天</option>
+      <option value="365">365天</option>
+      <option value="0">不保留</option>
+    </select>
+    <input type="button" name="" value="确定" onclick="setCookie()"><br>
+  </form>
+</body>
+</html>

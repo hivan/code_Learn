@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function btClick1 () {
+    // 获取第一个form对象的第一个元素的值
+    var Name = document.forms[0].elements[0].value;
+    // 也可以使用以下方法
+    // var Name = document.myForm1.myName.value;
+    // var Name = document.forms[0].myName.value;
+    // var Name = docuemnt.myForm1.elements[0].value;
+    // var Name = document.forms["myForm1"].elements[0].value;
+    // var Name = document.forms["myForm1"].myName.value;
+    alert(Name);
+  }
+  function btClick2 () {
+    // 获取名为myForm2对象下的mySex值
+    var sex = document.myForm2.mySex.value;
+    // 也可以使用以下方法
+    // var sex = document.myForm2.elements[0].value;
+    // var sex = document.forms[1].elements[0].value;
+    // var sex = document.forms[1].mySex.value;
+    // var sex = document.forms["myForm2"].mySex.value;
+    // var sex = document.forms["myForm2"].elements[0].value;
+    alert(sex);
+  }
+  </script>
+</head>
+<body>
+  <form name="myForm1">
+    请输入姓名: <input type="text" name="myName" value="" placeholder="">
+    <input type="button" name="" value="确定" onclick="btClick1()">
+  </form>
+  <form name="myForm2">
+    请输入性别: <input type="text" name="mySex" value="" placeholder="">
+    <input type="button" name="" value="确定" onclick="btClick2()">
+  </form>
+</body>
+</html>

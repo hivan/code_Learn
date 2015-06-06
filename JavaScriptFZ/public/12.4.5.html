@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <script type="text/javascript">
+    function openPage (pageURL) {
+      var indexWin = window.open(openURL);
+      var linkLength = indexWin.document.links.length;
+      for (var i = 0; i < linkLength; i++) {
+        document.write(indexWin.document.links[i].href,"<br>")
+        openPage(indexWin.document.links[i].href);
+        indexWin.close();
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <a href="#" onclick="openPage('sample31_index.html')">网站首页</a>
+</body>
+</html>

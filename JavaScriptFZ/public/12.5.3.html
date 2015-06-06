@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <div id="partIndex"></div>
+  <a href="#" name="part1" title="">第一章</a><br><br>
+  ...
+  <a href="#" name="part2" title="">第二章</a><br><br>
+  ...
+  <a href="#" name="part3" title="">第三章</a><br><br>
+  ...
+  <a href="#" name="part4" title="">第四章</a><br><br>
+  ...
+  <script type="text/javascript">
+  // 准备字符串，用于存放超链接
+  var partIndexStr = "";
+  for (var i = 0; i < document.anchors.length; i++) {
+    // 创建超链接
+    partIndexStr += "<a href='#" +document.anchors[i].name +"'>"+document.anchors[i].innerText + "</a><br>"
+  }
+  partIndexStr += "<br>";
+  // 将超链接显示在<div>与<div>之间
+  partIndex.innerHTML = partIndexStr;
+  </script>
+
+</body>
+</html>

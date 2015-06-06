@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <form name="myForm">
+    sex: <br>
+    <input type="radio" value="man" name="mySex">男
+    <br>
+    <input type="radio" value="woman" name="mySex">女
+    <br><br>
+    read: <br>
+    <input type="checkbox" value="书本" name="myRead">书本
+    <br>
+    <input type="checkbox" value="电视" name="myRead">电视
+    <br>
+    <input type="checkbox" value="网络" name="myRead">网络
+    <br><br>
+    <input type="button" name="" value="确定" onclick="boxValue()">
+  </form>
+  <script type="text/javascript">
+  function boxValue () {
+    for (var i = 0; i < document.myForm.mySex.length; i++) {
+      if (document.myForm.mySex[i].checked) {
+        alert("您选择了: "+document.myForm.mySex[i].value+"选项");
+        break;
+      }
+    }
+    var checkBoxValue = "";
+    for (var i = 0; i < document.myForm.myRead.length; i++) {
+      if (document.myForm.myRead[i].checked) {
+        checkBoxValue += document.myForm.myRead[i].value + " ";
+      }
+    }
+    if (checkBoxValue != "") {
+      alert("复选框您选择了:"+checkBoxValue+"选项");
+    };
+  }
+  </script>
+</body>
+</html>

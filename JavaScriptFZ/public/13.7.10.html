@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+    // 将选课从“可选课程”下拉列表框移动到“已选课程”
+    function toMyCourse () {
+      // 判断可选课程选项个数
+      var courseCount = document.myForm.course.length;
+      // 从可选课程最后一个选项开始循环，到第一个为止
+      for (var i = courseCount - 1; i > -1; i--) {
+        // 如果该选项处于选择状态，则执行以下代码
+        if (document.myForm.course[i].selected) {
+          //创建一个新的Option对象，该对象的text与value属性值为当前“可选课程”下拉列表框的选项的text与value属性值
+            var myOption = new Option(document.myForm.course[i].text,document.myForm.course[i].value);
+            //在“已选课程”下拉列表框中添加一个选项
+            document.myForm.myCourse.options[document.myForm.myCourse.options.length]=myOption;
+            //删除当前选项
+            document.myForm.course.remove(i);
+        }
+      }
+    }
+    // 将选课从已选课程移动到可选课程
+    function toCourse () {
+      var myCourseCount = document.myForm.myCourse.length - 1;
+      for(var i = myCourseCount; i>-1; i--){
+        var myOption = new Option(document.myForm.myCourse[i].text, document.myForm.myCourse[i].value);
+        document.myForm.course.options[document.myForm.course.options.length] = myOption;
+        document.myForm.myCourse.remove(i);
+      }
+    }
+
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    <table>
+      <tr>
+        <td>可选课程</td>
+        <td></td>
+        <td>已选课程</td>
+      </tr>
+      <tr>
+        <td>
+          <select name="course" size="7" multiple>
+            <option value="语文">语文</option>
+            <option value="数学">数学</option>
+            <option value="英语">英语</option>
+            <option value="化学">化学</option>
+            <option value="物理">物理</option>
+            <option value="政治">政治</option>
+            <option value="音乐">音乐</option>
+          </select>
+        </td>
+        <td>
+          <input type="button" name="" value=">>" onclick="toMyCourse()"><br>
+          <input type="button" name="" value="<<" onclick="toCourse()">
+        </td>
+        <td>
+          <select name="myCourse" size="7" multiple>
+            
+          </select>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

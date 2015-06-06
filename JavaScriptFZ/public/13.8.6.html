@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+    function lookImg () {
+      // 获得文件的URL
+      var fileURL = document.myForm.myFile.value;
+      // 获得文件的扩展名
+      fileURLSplit = fileURL.split(".");
+      fileExt = fileURLSplit[fileURLSplit.length - 1].toLowerCase();
+      // 判断是否是图片文件
+      if (fileExt == "jpg" || fileExt == "gif" || fileExt == "bmp" || fileExt == "png") {
+        // 图预览
+        document.images[0].src = fileURL;
+      }else{
+        alert("请选择jpg, gif,bmp或png图片文件");
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <form name="myForm" enctype="mulitipart/form-data" method="post">
+    请选择图片: <input type="file" name="myFile" onchange="lookImg()" value="" placeholder=""><br>
+    <img src="image/4d497defb06c763e493c2f8dbfa0df41low.jpg" alt="">
+  </form>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  // 校检标题文字个数是否超过限制
+  function titleLimit () {
+    if (document.myForm.textTitle.value.length > 15) {
+      alert("不能超过15个字");
+      return false;
+    }
+  }
+  // 校检内容文字个数是否超过限制
+  function textLimit () {
+    if (document.myForm.Context.value.length > 100) {
+      alert("不能超过100个字");
+      return false;
+    }
+  }
+  // 在失去焦点时校检标题文字个数是否超过限制
+  function blurCheckTitle () {
+    if (titleLimit() == false) {
+      if (window.confirm("是否截断文字")) {
+        context = document.myForm.textTitle;
+        context.value = context.value.substring(0, 15);
+      }
+    }
+  }
+  // 失去焦点时校检内容文字个数是否超过限制
+  function blurCheckText () {
+    if (textLimit()==false) {
+      if (window.confirm("是否截断文字")) {
+        context = document.myForm.Context;
+        context.value = context.value.substring(0, 100);
+      }
+    }
+  }
+  // 提交时校检文字是否超过限制
+  function checkText () {
+    // 如果titleLimit()函数返回false，则返回false
+    if (titleLimit() == false) {
+      return false;
+    }
+    // 如果textLimit()函数返回false，则返回false
+    if (textLimit() == false) {
+      return false;
+    }
+  }
+  </script>
+</head>
+<body>
+  <form action="submit.html" name="myForm" onsubmit="checkText()">
+    标题: <input type="text" name="textTitle" value="" size="20" placeholder="" onkeypress="return titleLimit()" onblur="blurCheckTitle()">(限制输入15个文字)<br>
+    内容: <textarea rows="10" cols="30" name="Context" onkeypress="return textLimit()" onblur="blurCheckText()"></textarea><br>
+    (限制100个文字)<br>
+    <input type="submit" name="" value="提交">
+    <input type="reset" name="" value="重置">
+  </form>
+</body>
+</html>

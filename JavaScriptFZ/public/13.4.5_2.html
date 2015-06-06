@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  function titleLimit () {
+    if (document.myForm.textTitle.value.length > 15) {
+      alert("标题文字内容不能超过15个字");
+      return false;
+    }
+  }
+  function textLimit () {
+    var titleCount = document.myForm.Context.value.length;
+    if (titleCount > 100) {
+      alert("内容不能超过100字");
+      return false;
+    }
+  }
+  function checkText () {
+    if (titleLimit() == false) {
+      return false;
+    }
+    if (textLimit() == false) {
+      return false;
+    }
+  }
+  </script>
+</head>
+<body>
+  <form action="submit.html" name="myForm" onsubmit="checkText()">
+    标题: <input type="text" name="textTitle" value="" size="20" placeholder="" onkeypress="return titleLimit()">(限制输入15个文字)<br>
+    内容: <textarea rows="10" cols="30" name="Context" onkeypress="return textLimit()"></textarea><br>
+    (限制100个文字)<br>
+    <input type="submit" name="" value="提交">
+    <input type="reset" name="" value="重置">
+  </form>
+</body>
+</html>

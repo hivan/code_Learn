@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <font color="red">请完成以下表单</font>
+  <form name="myForm">
+    name: <input type="text" name="myName" value="Hivan" placeholder=""><br>
+    sex: <select name="mySex">
+      <option value="man">Man</option>
+      <option value="woman">Woman</option>
+    </select><br>
+    <input type="submit" name="" value="Submit">
+    <input type="reset" name="" value="Reset">
+  </form>
+  <script type="text/javascript">
+  document.write("HTML文档中的第一个标签为：　&lt;", document.all[0].tagName, "&gt;<br>");
+  document.write("文本框中的内容为: ", document.all["myName"].value, "<br>");
+  var buttons = document.all.tags["input"];
+  document.write("本例input元素有：", buttons.length,"个，其类型分别为: <br>");
+  for(i=0; i<buttons.length; i++){
+    document.write(buttons[i].type, "<br>");
+  }
+  </script>
+</body>
+</html>

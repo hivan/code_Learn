@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <form name="myForm">
+    <p align="center">用户注册</p>
+    <fieldset name="fieldset1">
+    <legend>必填信息: </legend>
+      name: <input type="text" name="username" value="" placeholder=""><br>
+      password: <input type="password" name="password" value="" placeholder=""><br>
+    </fieldset>
+    
+    <fieldset name="fieldset2">
+    <legend>详细信息:</legend>
+      sex: <input type="radio" name="sex" value="man">男<input type="radio" name="sex" value="woman">女 <br>
+      QQ: <input type="text" name="qq" value="" placeholder=""><br>
+    </fieldset>
+    
+    <fieldset name="fieldset3">
+    <legend >基本设置:</legend>
+      选择Cookies的保留时间: <br>
+      <input type="radio" name="cookies" value="day">一天
+      <input type="radio" name="cookies" value="month">一个月
+      <input type="radio" name="cookies" value="year">一年
+      <input type="radio" name="cookies" value="none">不保留 <br>
+    </fieldset>
+  </form>
+  <script type="text/javascript">
+    document.write("本例中Form对象的element元素共有: ", document.myForm.elements.length, "个 <br>");
+    document.write("这些表单元素分别为: <br>");
+    for (var i = 0; i < myForm.elements.length -1 ; i++) {
+      document.write("名为: "+myForm.elements[i].name+"的"+myForm.elements[i].type+"元素 <br>");
+    };
+  </script>
+</body>
+</html>

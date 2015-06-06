@@ -103,7 +103,7 @@ Notype
 - String
 - Null
 - Undefined
-			   　　　
+				 　　　
 #### 有效范围
 - 全局
 - 局部 （函数体内）
@@ -999,7 +999,7 @@ window中的`defaultStatus`属性和`status`属性可以控制状态栏中的信
 通常展示的信息有两种:
 - 加载的文件和进度
 - 超链接的URL
-	  　　　
+		　　　
 #### 默认状态栏信息
 defaultStatus
 #### 状态栏瞬间信息
@@ -1250,7 +1250,442 @@ URL可以由协议，域名或IP，端口，虚拟路径，文件名，参数以
 - hash 返回当前文档URL的锚部分
 - search 返回当前文档URL的参数部分，包括”?”
 - href 返回当前文档的完整的URL
+#### 地址对象属性的应用：加载新网页
+#### 地址对象属性的应用: 获取参数
+#### 地址对象的方法
+- reload() 刷新文档
+- replace() 用一个新的URL来取代当前的URL
 
+#### 地址对象方法的应用: 刷新文档
+#### 地址对象方法的应用: 加载新文档
+
+## 第十二章 文档对象
+### 12.1 文档对象概述
+#### 文档对象介绍
+Document对象:
+- Anchor对象
+- Applet对象
+- cookie对象
+- Embed对象
+- Form对象
+- Image对象
+- Link对象
+- Location对象
+- Plugin对象
+#### 文档对象的属性
+- alinkColor 用于设置或返回呗激活的超链接的颜色
+- anchors 返回一个数组，数组中的元素为Anchor对象，用来代表当前文档中的锚
+- applets 返回一个数组，元素为applet对象，代表当前文档中的java小程序
+- bgColor 用于设置或返回当前文档的背景颜色
+- cookie 读写Cookie
+- domain 指定当前文档所属的Internet域,并且可以使处在同一个Internet域中的相互信任的Web服务器在网页之间交互时降低某项安全性的限制
+- embeds 返回一个数组，元素代表一个由enbed元素插入到HTML文档中的数据。通常是插件或ActiveX控件
+- fgColor 该属性用于设置或返回当前文档的文本默认的颜色
+- forms 返回一个数组，数组中的元素为Form对象，代表当前文档中的表单
+- images 返回一个数组，元素为Image对象，代表当前文档中的图像
+- lastModified 返回当前文档的最后一次修改时间
+- linkColor 设置或返回当前文档中未被访问过的超链接的颜色
+- links 返回一个数组，数组中的元素为Link对象，代表当前文档中的超链接
+- location 返回一个Location对象，与window对象中的location对象相同，反对使用
+- plugins 与embeds属性相同，推荐使用embeds属性
+- referrer 返回链接到当前文档的HTML文档的URL
+- title 用来设置或返回当前文档的标题
+- URL 该属性可以返回当前文档的URL
+- vlinkColor 设置或返回当前文档中已经访问过的链接颜色
+
+#### 文档对象的方法
+- clear() 擦去文档的内容，不过该方法反对使用
+- close() 关闭一个文档的输出流，并现实文档流中的内容
+- open() 该方法可以打开一个新文档
+- write() 在文档中添加数据
+- writeln() 与write()相同，只是在之后添加了一个换行
+
+#### 文档中对象的引用方法
+- 每个form元素都会创建一个Form对象，可以通过`forms[]`数组中的元素访问这些Form对象
+- a元素会在`links[]`数组中创建一个元素
+- 每个命名锚都会在`anchors[]`数组中创建一个元素
+- 每个img元素都会在`images[]`数组中创建一个元素
+- 每个applet元素都会在`applets[]`数组中创建一个元素
+- 每个embed元素都会在`embeds[]`数组和`plugins[]`中创建一个元素，建议使用`embeds[]`数组
+
+### 文档对象的应用
+#### 设置超链接的颜色
+　
+#### 设置网页背景颜色和默认文字颜色
+bgColor和fgColor属性来修改
+
+#### 文档信息
+Document对象中的lastModified,title和URL属性可以显示文档的信息。在HTML文件的最下方输出这些信息
+
+#### 在标题栏中现实滚动信息
+Document对象的title属性与Window对象的setInterval()方法相结合，可以在浏览器窗口中现实动态标题。
+
+#### 防止盗链
+使用Document对象的URL属性和referrer属性就可以防止盗链行为
+
+#### 网页中输出内容
+1. 简单的输出文字
+2. 将多个字符串链接后输出
+3. write()和writeln()之间的区别
+4. write()和writeln()的注意事项
+	只有在当前文档内才可以使用,否则会清除当前窗口内容　
+
+#### 在其他文档中输出内容
+在一个已经存在的文档中，使用open()方法和write()方法一样，都会清除文档内容
+
+如果不使用close()来关闭文档流，则可能：
+1. 浏览器将文档流存放在换村里，因此在浏览器窗口中不会现实缓存中的内容
+2. 文档流一直打开这，浏览器有可能不现实其他动态内容
+
+#### 输出非HTML文档
+	document.open(mimeType)　
+mimeType是可选参数，字符串，用于指定打开文档的MIME类型
+如果要打开HTML文档意外的文件，必须生命mimeType参数
+
+#### 文档中的所有HTML元素
+all属性，返回一个数组，数组中的元素为HTML文档中的所有HTML元素
+
+#### 引用文档中的HTML元素
+	document.all[i]
+	document.all[name]
+	document.all[tagName]
+
+#### 引用文档元素中的子元素
+#### 其他文档信息
+
+### 12.3 图像对象
+images属性的返回值是一个数组，数组中的每一个元素都是一个Image对象
+
+#### 图像对象介绍
+	document.images[i]
+	document.images[iamgeName]
+	document.imageName
+
+JS中可以使用构造函数来创建一个图片对象:
+	new Image(width, height)
+
+#### 图像对象的属性
+- border 边框的宽度
+- complete 返回布尔值，说明图片是否加载完毕
+- height 返回整数，高度
+- hspace 返回或设置替代图片的第质量图片的URL。该属性的初始值由img元素的lowsrc属性值决定
+- name 图片的名称
+- src 返回或这是图片的URL
+- vspace 返回一个整数，说明图片与文字在垂直方向的距离
+- width 返回整数，宽度
+
+#### 图像对象的事件
+Image对象没有可以使用的方法，但是支持abort, error等事件
+- abort 当用户放弃加载图片时激发的事件
+- click 图片上单击鼠标时激发
+- dblclick 双击激发
+- error 产生错误激发
+- load 成功加载激发
+- keydown 按下键盘激发
+- keypress 按下并释放键盘激发
+- keyup 释放键盘激发
+- mousedown 按下鼠标未释放激发
+- mouseup 释放鼠标激发
+- mouseover hover激发
+- mousemove 移动鼠标激发
+- mouseout 移开鼠标激发
+#### 显示图片的信息　
+#### 置换图片
+`src`属性可读写
+
+#### 随机图片
+#### 动态改变图片大小
+#### 缓存图片
+#### 显示默认图片
+
+### 12.4 链接对象
+#### 链接对象的属性
+
+- hash 返回或设置link的锚部分
+- host 返回或设置对象的域名部分和端口部分
+- hostname 返回或设置link的域名部分
+- href 返回或设置对象的完整URL部分
+- pathname 返回或设置link的路径部分，包括目录和文件名
+- port 返回或设置link的端口部分
+- protocol 返回或设置link的协议部分
+- search 返回或设置link的查询部分，包括分隔符”?”
+- target 返回或设置打开的目标窗口
+- text 现实link对象中的超链接文字，Netscape属性
+- innerText　与text属性相当，IE属性
+
+#### 链接对象的事件
+link对象支持的事件与Image对象大致相同
+
+#### 查看一个网页上的所有超链接
+#### 翻页程序
+#### 网站目录
+### 12.5 锚对象
+anchors属性可以返回一个数组，每一个元素都是一个Anchors对象(锚对象)。
+#### 锚对象属性
+- name 返回锚命名
+- text Netscape浏览器属性
+- innerText IE属性  
+
+#### 锚对象与链接对象的区别
+#### 创建文档索引
+
+## 第十三章 表单对象
+### 13.1 表单对象概述
+#### 表单对象介绍
+#### 表单对象的属性
+- acceptCharset 返回或设置接受的输入数据所用的字符编码方式列表，该属性的初始值由form元素中的acceptCharset属性值决定。
+- action 返回或设置表单提交的URL，初始值由form元素中的action属性值决定
+- elements 返回由Form对象中的元素所构成的数组，数组中的元素也是对象，有可能是Button, Checkbox,Hidden, Password, Radio, Reset, Select, Submit, text, Texture
+- encoding 返回或设置提交表单时传输数据的编码方式,初始值enctype属性值决定
+- id 返回或设置表单的id
+- length 返回From对象中元素的个数
+- method 返回或设置提交表单的方式
+- name 返回或设置表单的名称
+- target 返回或设置将表单提交到指定浏览器窗口或框架中
+
+#### 表单对象的方法
+
+- reset()　
+- submit()
+
+#### 表单对象的事件
+
+- reset
+- submit
+
+### 13.2 表单对象的应用
+利用对象的属性，方法和事件可以实现很多动态效果
+
+#### 表单验证
+#### 循环验证表单
+#### 设置表单的提交方式
+#### 重置表单的提示
+#### 不使用提交按钮提交表单
+### 13.3 表单元素
+#### 表单元素概述
+**表单元素:**
+- 单行文本框 \<input type=“text”\>
+- 多行文本框 \<textarea\>\</textarea\>
+- 密码框 \<input type=“password”\>
+- 单选按钮 \<input type=“radio”\>
+- 复选框 \<input type=“checkbox”\>
+- 下拉列表框
+- 文件选择框 \<input type=“file”\>
+- 普通按钮 \<input type=“button”\>　
+- 提交按钮 \<input type=“submit”\>
+- 重置按钮 \<input type=“reset”\>
+- 分组元素 \<fieldset\>\</fieldset\>　　
+
+#### 表单元素的命名
+
+### 13.4 文本框
+input:
+- type 类型
+- name 文本框名称
+- value 初始值
+- size 宽度
+- maxlength 文字最大数
+textarea:
+- rows 高度
+- cols 宽度
+- text 初始值
+
+#### 文本框的属性
+- accessKey 返回或设置访问文本框的快捷键
+- defaultValue 返回或设置文本框中的初始文本
+- disabled 返回或设置文本框是否被禁用 true or false
+- form 返回包含文本框元素的Form对象的引用
+- id 返回或设置文本框的ID属性值
+- maxLength 返回或设置文本框可输入文字的最大数
+- name 返回文本框的名称
+- readOnly 返回或设置文本框是否只读
+- size 返回或设置单行文本框的大小
+- tabIndex 返回或设置文本而况的tab顺序索引
+- type 返回文本框类型
+- value 返回或设置文本框中的文本
+- rows  多行文本框的高度
+- cols 多行文本框的宽度
+
+#### 文本框的方法
+　
+- blur() 移开焦点
+- click() 模拟单击
+
+#### 文本框的事件
+- blur 焦点移开时激发
+- change 内容改变并失去焦点激发
+- click 单击文本框时激发
+- dblclick 双击文本框时激发
+- focus 获得焦点时激发
+- keydown 按下键盘激发
+- keypress 按下并释放键盘激发
+- keyup 释放键盘激发
+- mousedown 按下未释放鼠标激发
+- mouseup 释放鼠标激发
+- mouseover 移动到其上时激发
+- mousemove 在其上移动鼠标时激发
+- mouseout 文本框上移开时激发
+- select 文本框的文字被选中失去焦点时激发
+- selectstart 文字开始呗选中时激发
+
+#### 限制文本框中输入的字数
+1. 输入文字时判断输入字数
+2. 提交数据时候判断输入字数
+3. 失去焦点时候判断输入字数
+
+#### 　自动选择文本框中的文字
+1. 鼠标经过文本框时选择文字
+	select()方法与mouseover事件结合
+2. 鼠标经过的时候清除文本
+	`myText.value = “”;`
+3. 进一步完善
+	不清除用户输入的文字　
+	检查内容是否与初始值相同: 
+	`textbox.value == textbox.defaultValue`
+	`onfocus="clearText(this)"`
+
+### 13.5 按钮
+#### 按钮的创建方式
+1. 使用button元素创建按钮
+2. 使用input元素创建按钮
+#### 按钮的属性
+- accessKey 返回或设置快捷键
+- defaultValue 返回或设置初始文字
+- disabled 返回或设置是否被禁用
+- form 返回包含按钮元素的Form对象的引用
+- id 返回或设置ID
+- name 返回按钮名称　
+- tabIndex 返回或设置按钮的tab顺序索引
+- type 返回按钮的类型
+- value 返回或设置显示在按钮上的文字
+
+#### 按钮的方法
+- blur() 移开焦点
+- click() 模拟鼠标点击
+- focus() 该方法可以将焦点赋给按钮
+#### 按钮的事件
+- blur 移开按钮激发
+- click 单击激发
+- dblclick 双击激发
+- focus 获得焦点激发
+- keydown 按下键盘激发
+- keypress 按下并释放键盘激发
+- keyup 释放键盘激发
+- mousedown 按下并释放鼠标激发
+- mouseup 释放鼠标激发
+- mouseover 鼠标移动到激发
+- mousemove 在其上移动激发
+- mouseout 移开激发
+
+#### 网页调色板
+#### 改变多行文本框大小
+### 13.6 单选按钮和复选框
+#### 创建单选按钮和复选框
+#### 单选按钮和复选框的属性
+#### 设置单选按钮与复选框的默认选项
+用`checked`设置默认选项
+#### Form对象与Radio对象，Checkbox对象
+#### 组与选项
+#### 获取单选按钮与复选框的值
+#### 限制复选框的选择项数
+### 13.7 下拉列表框
+#### 创建下拉列表框
+#### 下拉列表框的属性
+- length 返回下拉框选项个数
+- multiple 返回或设置下拉框是否允许多选
+- option 返回一个数组，数组中的元素为选项
+#### 下拉列表框的方法
+- remove(i) 删除下拉列表框的选项,其中i为数组下标
+#### 下拉列表框的事件
+#### 选项对象
+创建下拉列表框中的选项，可以使用以下构造函数:
+`new Option(text, value, defalutSelected, selected)`
+
+#### 选项对象的属性
+#### 同时显示多行的下拉列表框
+#### 可以同时选择多个选项的下拉列表框
+multiple属性
+
+#### 利用下拉列表框翻页
+可以将选项值设置为要跳转的URL，通过select对象的value属性值得到该跳转URL，在通过Location对象的href属性跳转页面。
+
+#### 简单的选课程序
+利用下拉列表框的菜单，多行显示，以及随意添加，删除选项的特点。
+#### 二级联动菜单
+
+### 13.8 文件上传框
+#### 创建文件上传框
+#### 文件上传框的属性
+#### 文件上传框的方法
+#### 文件上传框的事件
+#### 文件上传框的注意事项
+- 上传文件的编码与传输方式与普通的文本不同，因此必须要在form元素中设置enctype属性与method属性，enctype必须为”mulitipart/form-data”, method属性值必须为”post“
+- value属性值只能由哟哦你过户选择或输入，不能在JS程序中输入
+- 不存在defaultValue属性
+- 不会存在maxlength属性
+
+#### 图片预览
+### 13.9 隐藏域
+是不在浏览器显示的，多数是向服务器上传一些不希望用户看到的数据
+#### 创建隐藏域　　
+#### 隐藏域的属性
+#### 输入提示
+### 13.10 Fieldset元素
+使用Fieldset元素为表单中的元素进行分组，所有在`<fieldset>...</fieldset>`之间的表单元素可以划分为一组
+
+#### 创建分组
+fieldset元素也是Form对象的`elements[]`数组中的一员
+
+## 第十四章 cookie
+### 14.1 cookie介绍
+#### 什么是cookie
+就是一些信息，以文件的形式存储在客户端计算机上。
+
+#### cookie的作用
+cookie的主要作用是保存信息，并与服务器互动。
+常用到cookie的场景
+- 用户登录
+- 电子商务
+- 定制用户页面
+- 手机用户喜好
+
+### 14.2 创建与读取cookie
+创建:
+document.cookie = “name=value”
+
+读取:
+document.cookie
+
+### 14.3 获取cookie的值
+cookie文件存放的就是一个字符串，获取指定的cookie，还需要使用String对象中的方法才能获得需要的cookie值
+
+### 14.4 cookie的编码
+cookie都是未编码的格式存入，要将特殊符号写入cookie中，就必须在写入cookie之前，使用`escape()`函数将cookie值进行编码，在读取cookie时候再通过`unescape()`函数还原
+
+### 14.5 cookie的生存期
+document.cookie = “name=value; expires=date”
+
+date必须是GMT格式的日期型字符串，格式如下:
+
+`wdy, DD-Mon-YY HH:MM:SS GMT`
+
+- wdy: 英文表示星期数
+- DD: 两位数表示的日期数
+- Mon: 用3个字符表示月份
+- YY: 用两位数表示的年份
+- HH: 用两位数表示的小时数
+- MM: 用两位数表示的分钟数
+- SS: 用两位数表示的秒数
+- GMT: 用于说明该格式是GMT格式
+ex: `Sat, 15 Sep 2015 06:27:12 GMT`
+
+由于GMT格式使用起来很不方便，因此，可以先定义一个Date对象，再通过`toGMTString()`方法，来得到GMT格式的日期型字符串。
+
+**此部分代码比较晦涩，需要请教其他人或再行研究, 代码 14.5.html**
+
+### 14.6 cookie的路径
+cookie默认只能被同路径或子路径页面读取，如果要网站其他目录的文件也能读取，需要使用path设置cookie的路径
+设置path方法与设置expires的方法类似，使用分号与其他参数分割开来就可以了
 
 [1]:	https://www.evernote.com/shard/s5/nl/545318/21405b6e-48b2-4dfa-a8f8-0f0b4d31f763/?csrfBusterToken=U%3D85226%3AP%3D%2F%3AE%3D14d41aa6063%3AS%3D18a649e9eb6f294c7d188c0db72f569e
 [2]:	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+    function inputCheck () {
+      if (myForm.oldName.value.length == 0) {
+        alert("您是第一次输入姓名，本次输入的姓名为:"+myForm.myName.value)
+      }else{
+        alert("您上次输入的姓名为: "+myForm.oldName.value+"\n本次输入的姓名为: "+myForm.myName.value);
+      }
+      // 设置隐藏域中的value属性值
+      myForm.oldName.value = myForm.myName.value;
+    }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    输入您的姓名: <input type="tel" name="myName" value="" placeholder=""><input type="hidden" name="oldName" value="">
+    <input type="button" name="myButton" value="确定" onclick="inputCheck()">
+  </form>
+</body>
+</html>

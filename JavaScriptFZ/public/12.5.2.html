@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <a name="index">JavaScript课程介绍</a><br>
+  <a href="sample31_1.html" name="mylink1">基础篇</a><br>
+  <a href="sample31_2.html" name="mylink2">实用篇</a><br>
+  <a href="sample21_3.html">Ajax篇</a><br><br>
+  <script type="text/javascript">
+  var linkLength = document.links.length;
+  document.write("本例中的超链接一共有",linkLength,"个 <br>这些超链接分别为: <br>");
+  for (var i = 0; i < linkLength; i++) {
+    if (document.links[i].text != undefined) {
+      document.write(document.links[i].text, ":")
+    }else if (document.links[i].innerText != undefined) {
+      document.write(document.links[i].innerText, ":")
+    }
+    document.write(document.links[i].href, "<br>");
+  }
+  var anchorsLength = document.anchors.length;
+  document.write("<br>本例中的锚一共有",anchorsLength,"个<br>这些超链接分别为: <br>");
+  for (var i = 0; i < anchorsLength; i++) {
+    if (document.anchors[i].text != undefined) {
+      document.write(document.anchors[i].text);
+    }else if (document.anchors[i].innerText != undefined) {
+      document.write(document.anchors[i].innerText,": ")
+    }
+    document.write(document.anchors[i].name, "<br>");
+  };
+  </script>
+</body>
+</html>

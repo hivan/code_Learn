@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>防止盗链</title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  // 当前文档的URL
+  var currentURL = document.URL;
+  // 上一个文档的URL
+  var frontURL = document.referrer;
+  // 如果上一个文档的URL为空，则是直接打开当前文档，如则不存在盗链问题，否则又可能是盗链
+  if (frontURL != "") {
+    // 通过分割，将当前文档的URL各部分存放在currentURLs数组中
+    var currentURLs = currentURL.split("/");
+    // 通过分割，将上一个文档的URL各部分存放在frontURLs数组中
+    var frontURLs = frontURL.split("/");
+    // 两个数组的第3元素都为URL的域名部分
+    // 比较两个数组的第3元素，如果域名相同，则不是盗链，否则就似乎盗链
+    if (currentURLs[2] == frontURLs[2]) {
+      document.write("不是盗链，可以现实正常文档");
+    }else{
+      document.write("您不是从本站中访问到该网址，请通过本网站访问");
+      // 可以使用以下代码跳转到网站的首页
+      // history.location = "http://" + currentURLs[2];
+    }
+  }else{
+    document.write("您是直接打开该文档的，不存在盗链问题");
+  }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

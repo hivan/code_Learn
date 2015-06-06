@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  // 设置变量，用于控制循环显示标题
+  var step = 0;
+  // 将要显示的标题内容放在一个数组里，通过显示数组中的元素来显示标题
+  var titleText = ["您好！", "欢迎光临", "祝您身体健康！"];
+  // 设置用于循环现实标题的函数
+  function showTitle () {
+    if (step == titleText.length) {
+      step = 0;
+    }
+    // 现实标题
+    document.title = titleText[step];
+    // 如果使用以下代码，则可以在状态栏上显示滚动的信息
+    // window.status = titleText(step);
+    // 数组下标计数加1
+    step++;
+  }
+  // 每隔一秒钟现实一次标题
+  setInterval("showTitle()", 1000);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

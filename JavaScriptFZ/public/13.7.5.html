@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <form name="myForm">
+    what do u like?<br>
+    <select name="like" id="">
+      <option value="">游泳</option>}
+    </select>
+    <input type="reset" value="重置">
+  </form>
+  <script type="text/javascript">
+    var option1 = new Option("看书","看书");
+    // 该选项是默认选项
+    var option2 = new Option("上网","上网", true);
+    var option3 = new Option("看电视","看电视");
+    var option4 = new Option("下棋","下棋");
+    // 该选项是当前选中的选项
+    var option5 = new Option("钓鱼","钓鱼",false, true);
+    var option6 = new Option("打牌", "打牌");
+    document.myForm.like.options[0] = option1;
+    document.myForm.like.options[1] = option2;
+    document.myForm.like.options[2] = option3;
+    document.myForm.like.options[3] = option4;
+    document.myForm.like.options[4] = option5;
+    document.myForm.like.options[5] = option6;
+    document.myForm.like.options[6] = new Option("发呆","发呆");
+  </script>
+</body>
+</html>
