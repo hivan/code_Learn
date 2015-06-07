@@ -1702,7 +1702,163 @@ cookie默认只能被同路径或子路径页面读取，如果要网站其他�
 - cookie的生存期是以毫秒为单位计算的
 - 客户端浏览器可以设置拒绝cookie
 
-	　　
+# 第三篇 Ajax篇
+## 第十五章 Ajax介绍
+Ajax(Asynchronous JavaScript And XML)是异步JS和XML技术的缩写
+### 15.1 传统的Web技术
+### 15.2 Ajax技术原理
+### 15.3 Ajax技术的优缺点
+优点表现:
+- 只提交有用的数据，而不是整个网页的所有数据，因此可以减少数据的冗余程度，也可以减轻网络贷款的压力和服务器的负担
+- 可以局部更新，浏览器不会显示空白
+- 相应速度快
+- 将计算转嫁到客户端，减轻服务器负担
+- 获得其他网页内容填充到自身网页
+缺点表现:
+- 需要Ajax引擎，不同浏览器Ajax有所不同
+- 后退功能无效
+- 不被搜索引擎支持
+- 很多智能终端不能很好的支持Ajax　　
+
+### 15.4 Ajax技术组成
+Ajax包括HTML，XHTML,CSS,DOM,XML,XSTL和HTMLHttpRequest等技术
+使用最多的是JavaScript,XMLHttpRequest, CSS, DOM和XML
+
+#### JavaScript
+Ajax中，使用最多的是JS来检验表单数据的有效性，或通过JS来操作XMLHttpRequest以达到与WEB服务器或数据库交互的目的。
+
+#### XMLHttpRequest
+XMLHttpRequest是XMLHTTP组件的一个对象，也是Ajax处理的核心。
+IE中使用的是XMLHTTP组件的XMLHttpRequest对象，而Netscape是直接使用XMLHttpRequest组件，创建异步调用对象的语句有少许差别
+
+#### CSS
+
+#### DOM
+Ajax中，DOM的作用主要是刷新局部数据
+
+#### XMl
+XML是以简历和管理数据为目标
+Ajax中，XML主要是存储数据和文档，并让其他程序共享。
+
+### 15.5 XMLHttpRequest对象
+#### XMLHttpRequest的方法
+- abort() 停止当前的请求
+- getAllResponseHeaders() 获取相应的所有HTTP头
+- getResponseHeader(header) 从相应的信息中获取指定的HTTP头
+	header: 要获取的HTTP头的名称，如Content-Type
+- open(method,URL,flag,name,pwd) 创建一个新的HTTP请求，并指定该HTTP请求的方法，URL及验证信息
+	- method: HTTP请求方法，一共有get,post
+	- head、put、delete五种方法，常用的方法为get和post
+	- URL HTTP请求的URL地址，可以是绝对或相对
+	- flag 可选的布尔型参数，用于指定是否使用异步方式，true表示异步方式，false表示同步方式，默认为true
+	- name 可选参数，服务器需要验证，可以输入用户名
+	- pwd 可选参数，需要验证，可以输入密码
+- send(data) 将请求发送给Web服务器
+	data 可选参数，发送请求的数据
+- setRequestHeader(name, value) 单独指定请求的HTTP头
+	- name: HTTP头名称
+	- value HTTP头的值
+
+#### XMLHttpRequest的属性
+[具体地址][7]
+属性
+- readyState
+	HTTP 请求的状态.当一个 XMLHttpRequest 初次创建时，这个属性的值从 0 开始，直到接收到完整的 HTTP 响应，这个值增加到 4。
+	5 个状态中每一个都有一个相关联的非正式的名称，下表列出了状态、名称和含义：
+	0. Uninitialized
+		初始化状态。XMLHttpRequest 对象已创建或已被 abort() 方法重置。
+	1. Open
+		open() 方法已调用，但是 send() 方法未调用。请求还没有被发送。
+	2. Sent
+		Send() 方法已调用，HTTP 请求已发送到 Web 服务器。未接收到响应。
+	3. Receiving
+		所有响应头部都已经接收到。响应体开始接收但未完成。
+	4. Loaded
+		HTTP 响应已经完全接收。
+	readyState 的值不会递减，除非当一个请求在处理过程中的时候调用了 abort() 或 open() 方法。每次这个属性的值增加的时候，都会触发 onreadystatechange 事件句柄。
+- responseText
+	目前为止为服务器接收到的响应体（不包括头部），或者如果还没有接收到数据的话，就是空字符串。
+	如果 readyState 小于 3，这个属性就是一个空字符串。当 readyState 为 3，这个属性返回目前已经接收的响应部分。如果 readyState 为 4，这个属性保存了完整的响应体。
+	如果响应包含了为响应体指定字符编码的头部，就使用该编码。否则，假定使用 Unicode UTF-8。
+- responseXML
+	对请求的响应，解析为 XML 并作为 Document 对象返回。
+- status
+	由服务器返回的 HTTP 状态代码，如 200 表示成功，而 404 表示 "Not Found" 错误。当 readyState 小于 3 的时候读取这一属性会导致一个异常。
+- statusText
+	这个属性用名称而不是数字指定了请求的 HTTP 的状态代码。也就是说，当状态为 200 的时候它是 "OK"，当状态为 404 的时候它是 "Not Found"。和 status 属性一样，当 readyState 小于 3 的时候读取这一属性会导致一个异常。
+
+常用HTTP状态
+[状态码地址][8]
+
+#### XMLHttpRequest的事件
+XMLHttpRequest对象可以响应readystatechange事件，该事件是在XMLHttpRequest对象的readyState属性值产生变化时所要激发的。
+
+### 15.6 实现Ajax
+实现异步调用需要XMLHttpRequest对象，要局部刷新需要使用到JavaScript和DOM。
+#### 实现Ajax的步骤
+1. 创建XMLHttpRequest对象
+2. 创建一个新的HTTP请求，并指定HTTP请求的方法，URL及验证信息
+3. 设置响应HTTP请求状态变化的函数
+4. 发送HTTP请求
+5. 获取异步调用返回的市局
+6. 使用JavaScript和DOM实现局部刷新
+
+#### 创建XMLHttpRequest对象
+IE: 
+`var xmlHttp = new ActivexObject("Microsoft.XMLHTTP);`
+Netscape:
+`var xmlHttp = new XMLHttpRequest()`
+
+#### 创建HTTP请求
+可以使用XMLHttpRequest对象的open()方法
+`XMLHttpRequest.open(method,URL,flag,name,password)`
+- method: 用于指定HTTP的请求方法，共有get,post,head,put,delete五种方法,常用get和post
+- URL 用于指定HTTP请求的URL地址
+- flag 可选，为布尔型。指定是否使用异步，默认为true
+- name 可选，输入用户名，如果服务器需要验证，则必须
+- password 可选，输入密码，如果服务器需要验证，则必须
+
+通常使用以下代码来访问一个网站文件的内容
+`xmlHttp.open("get", "http://www.aspxfans.com/BookSupport/JavaScript/ajax.xml", true);`　　　
+或使用以下代码访问一个本地文件的内容
+`xmlHttp.open("get", "ajax.html", true)`
+
+#### 设置响应HTTP请求变化的函数
+创建ＨＴＴＰ请求之后，就可以将请求发送给Ｗｅｂ服务器了。发送ＨTTP请求的目的是为了接收从服务器中返回的数据。从创建XMLHttpRequest对象开始，到发送数据，接收数据，XMLHttpRequest对象一共会经历以下5种状态
+
+- 未初始化状态 创建完XMLHttpRequest对象时，该对象处于未初始化状态。此时XMLHttpRequest对象的readyState属性为0
+- 初始化状态　在创建完XMLHttpRequest对象后，使用open()方法创建了HTTP请求时，该对象处于初始化状态。此时XMLHttpRequest对象的readyState属性值为1
+- 发送数据状态 初始化XMLH对象之后，使用send()方法发送数据时，该对象处于发送给状态，此时XMLH对象的readyState属性值为2
+- 接收数据状态 服务器处理完返回结果，此时处于接收状态，readyState属性值为3
+- 完成状态 readyState属性值为4，此时接收完毕后数据存入客户端计算机的内存中，可以使用reponseText属性或reponseXML属性来获取数据
+
+XMLttpRequest可以响应readystatechange事件，readyState属性值改变时激发。因此，可以通过该事件调用一个函数，并在该函数中判断XMLHttpRequest对象的readyState属性值，如果readyState为4则使用responseText属性或responseXML属性来获取数据
+
+#### 设置获取服务器返回数据的语句
+以上异步调用过程完毕，并不代表异步调用成功了，如果要判断异步调用是否成功，还要判断XMLHttpRequest对象的status属性值，只有该属性值为200，才表示异步调用成功，因此要获取服务器返回数据的语句，还必须要先判断XMLHttpRequest对象的status属性值是否等于200
+
+**注意，如果HTTP文件是本地运行而不是服务器上运行，xmlHttp.status返回值为0**
+
+#### 发送HTTP请求
+`XMLHttpRequest.send(data)`
+以下为data参数的一个实例
+ `name=myName&value=myValue`
+只有send()方法之后，XMLHttpRequest对象的readyState属性值才会开始改变，也才会激发readystatechange事件，并调用函数
+#### 局部更新
+1. 表单对象的数据更新
+	表单对象的数据更新，通常只要更改表单对象的value属性值，其语法代码如下所示。
+	`FormObject.value="新数值"`
+
+2. IE浏览器中标签间文本的更新
+	IE浏览器中使用inerText或innerHTML属性来更改标签间文本的内容。
+3. DOM技术的局部刷新
+	DOM中,HTML每一对开始标签和结束标签都堪称是一个节点。
+	DOM中使用getElementById()方法可以通过id属性值来查找该标签，或者说节点
+	`var node = document.getElementById("myDiv")`
+	**注意: id节点是唯一的**
+
+#### 完整的Ajax实例
+[实例地址][9]
 
 [1]:	https://www.evernote.com/shard/s5/nl/545318/21405b6e-48b2-4dfa-a8f8-0f0b4d31f763/?csrfBusterToken=U%3D85226%3AP%3D%2F%3AE%3D14d41aa6063%3AS%3D18a649e9eb6f294c7d188c0db72f569e
 [2]:	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
@@ -1710,3 +1866,6 @@ cookie默认只能被同路径或子路径页面读取，如果要网站其他�
 [4]:	http://www.w3school.com.cn/js/js_window.asp
 [5]:	http://www.w3school.com.cn/tags/html_ref_eventattributes.asp
 [6]:	http://www.w3school.com.cn/jsref/dom_obj_window.asp
+[7]:	http://www.w3school.com.cn/xmldom/dom_http.asp
+[8]:	http://www.w3school.com.cn/tags/html_ref_httpmessages.asp
+[9]:	/public/15.6.8.html

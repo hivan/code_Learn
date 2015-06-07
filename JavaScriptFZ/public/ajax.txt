@@ -1,0 +1,35 @@
+# iA Writer Pro for iPad and iPhone
+iA Writer Pro introduces professional tools to help you craft your text:
+
+## Keyboard Bar
+This contains navigation and language-specific punctuation, plus a thumb tab in the center. Swipe the thumb tab down to hide the keyboard. Swipe it left to show Edit, Syntax, and Statistics, then right to return to language-specific punctuation.
+
+## Syntax Control (in the Keyboard Bar)
+Syntax Control dims everything but the chosen syntax (Adjectives, Nouns, Adverbs, Verbs, Prepositions, or Conjunctions) for English text. This gives you insight into how your text is constructed, to help control your writing style. Choose Sentence to dim everything but the current sentence, helping you to concentrate fully and find your flow.
+
+## Workflow
+iA Writer Pro’s simple workflow is built around how you work. Start by structuring your thoughts and ideas in Note, move to Write to flesh them out, progress to Edit for refining, then move to Read when you’re done (documents in Read are read-only). These Workflow states keep you focused on the task at hand, and each has a task-specific font and color.
+
+## What’s New in iA Writer Pro 1.4
+- Move documents to/from folders (slide list item)
+- Folder creation (Move > New Folder)
+- Text selection can now be extended via Keyboard bar’s navigation keys
+- Optimized handoff support
+- Refined Sentence Syntax Control
+- Stability improvements
+- Performance improvements
+
+For more on iA Writer Pro’s features, see the “iA Writer Pro Quick Start” document, or visit www.writer.pro.
+
+# File support
+- iA Writer Pro uses plain text files, such as .txt and .md, in “UTF-8” encoding.
+
+# iA Writer Pro For Mac
+A Mac version is also available, with seamless sync over iCloud. Look for “iA Writer Pro” in the App Store.
+
+# Questions? Problems?
+- Visit www.writer.pro for more information
+- Visit support.writer.pro for help and discussion
+
+We look forward to hearing from you!
+— Information Architects Inc.
