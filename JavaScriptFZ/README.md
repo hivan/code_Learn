@@ -103,7 +103,7 @@ Notype
 - String
 - Null
 - Undefined
-				 　　　
+				  　　　
 #### 有效范围
 - 全局
 - 局部 （函数体内）
@@ -999,7 +999,7 @@ window中的`defaultStatus`属性和`status`属性可以控制状态栏中的信
 通常展示的信息有两种:
 - 加载的文件和进度
 - 超链接的URL
-		　　　
+		 　　　
 #### 默认状态栏信息
 defaultStatus
 #### 状态栏瞬间信息
@@ -1689,8 +1689,8 @@ cookie默认只能被同路径或子路径页面读取，如果要网站其他�
 
 ### 14.7 cookie的domain
 解决同域下不同网址访问问题，需要设置cookie的domain，和设置path方法类似
-`";domain=.hivan.me"
-`
+\`";domain=.hivan.me"
+\`
 ### 14.8 cookie的secure
 设置了cookie的secure，那么只能被HTTPS协议或其他安全协议传输，secure是一个布尔值
 
@@ -1800,7 +1800,7 @@ XMLHttpRequest对象可以响应readystatechange事件，该事件是在XMLHttpR
 2. 创建一个新的HTTP请求，并指定HTTP请求的方法，URL及验证信息
 3. 设置响应HTTP请求状态变化的函数
 4. 发送HTTP请求
-5. 获取异步调用返回的市局
+5. 获取异步调用返回的数据
 6. 使用JavaScript和DOM实现局部刷新
 
 #### 创建XMLHttpRequest对象
@@ -1859,6 +1859,36 @@ XMLttpRequest可以响应readystatechange事件，readyState属性值改变时�
 
 #### 完整的Ajax实例
 [实例地址][9]
+
+**需要再研究一遍实例**
+
+## 第十六章 深入Ajax
+全面掌握Ajax，除了JS，还需要掌握以下技术
+### 16.1 客户端脚本语言
+#### 使用JavaScript的局部刷新技术
+局部刷新不一定需要Ajax，例如之前的二级联动菜单，就是一个局部刷新的例子。
+
+#### 使用iFrame的局部刷新技术
+### 16.2 服务器脚本语言
+客户端脚本是Ajax的核心，异步存取是Ajax的灵魂
+#### 改进iframe局部刷新
+Iframe技术的好处
+- 减少客户端代码，加载客户端文件比较块
+- 根据需要显示指定的文件
+
+#### Ajax与服务器交互
+
+### 16.3 文档对象模型　
+
+#### 16.4 层叠样式表
+`element.style.attribute = value`
+
+- element HTML中的元素名，通常由ID属性值指定
+- style 关键字，用于声明 元素的样式
+- attribute 样式的属性，也就是指定什么样式
+- value 样式的属性值
+
+#### 16.5 XML
 
 [1]:	https://www.evernote.com/shard/s5/nl/545318/21405b6e-48b2-4dfa-a8f8-0f0b4d31f763/?csrfBusterToken=U%3D85226%3AP%3D%2F%3AE%3D14d41aa6063%3AS%3D18a649e9eb6f294c7d188c0db72f569e
 [2]:	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence

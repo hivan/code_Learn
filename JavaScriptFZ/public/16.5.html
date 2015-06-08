@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+    // 定义变量，存放XMLHttpRequest对象
+    var xmlHttp;
+    // 定义一个用户创建XMLHttpRequest对象的函数
+    function createXMLHttpRequest () {
+      if (window.ActiveXObject) {
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }else if(window.XMLHttpRequest){
+        xmlHttp = new XMLHttpRequest();
+      }
+    }
+
+    // 判断用户名是否已经被使用
+    function showUserErr () {
+      if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200 || xmlHttp.status == 0) {
+          var myXML = xmlHttp.responseXML;
+          var node = myXML.getElementsByTagName("name");
+          for (var i = 0; i < node.length; i++) {
+            if(node[i].firstChild.nodeValue == document.myForm.userName.value){
+              var sexNode = node[i].parentNode.getElementsByTagName("sex");
+              document.myForm.userSex.value = sexNode[0].firstChild.nodeValue;
+              var jobNode = node[i].parentNode.getElementsByTagName("job");
+              document.myForm.userJob.value = jobNode[0].firstChild.nodeValue;
+              var addressNode = node[i].parentNode.getElementsByTagName("address");
+              document.myForm.userAddress.value = addressNode[0].firstChild.nodeValue;
+              document.myForm.mySubmit.value = "修改";
+              break;
+            }
+          }
+        }else{
+          alert("异步调用出错\n返回的HTTP状态码为: "+xmlHttp.status+"\n返回的HTTP状态信息为: "+xmlHttp.statusText);
+        }
+      }
+    }
+
+    // 准备http请求发送
+    function checkUser () {
+      document.myForm.mySubmit.value = "注册";
+      if (document.myForm.userName.value.length ==0) {
+        var node = document.getElementById("userNameNode");
+        node.firstChild.nodeValue = "请输入用户名";
+        node.style.color = "red";
+      }else{
+        createXMLHttpRequest();
+        if (xmlHttp != null) {
+          xmlHttp.open("get", "16.5.xml", true);
+          xmlHttp.onreadystatechange = showUserErr;
+          xmlHttp.send(null);
+        };
+      }
+    }
+
+  </script>
+</head>
+<body>
+  <h1 align="center">用户注册/修改用户信息</h1>
+  <form action="submit.html" name="myForm" method="post">
+    姓名: <input type="text" name="userName" value="" placeholder="" onblur="checkUser()"><br>
+    性别: <input type="text" name="userSex" value="" placeholder=""><br>
+    职位:<input type="text" name="userJob" value="" placeholder=""><br>
+    地址:<input type="text" name="userAddress" value="" placeholder=""><br>
+    <input type="submit" name="mySubmit" value="注册"><input type="reset" name="" value="重置">
+  </form>
+</body>
+</html>

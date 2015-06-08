@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>二级联动菜单</title>
+    <script language="javascript" type="text/javascript">
+    <!--
+      //定义一个变量，用于存放XMLHttpRequest对象
+      var xmlHttp;
+      //定义一个用于创建XMLHttpRequest对象的函数
+      function createXMLHttpRequest()
+      {
+        if (window.ActiveXObject)
+        {
+          xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        else if (window.XMLHttpRequest)
+        {
+          xmlHttp = new XMLHttpRequest();
+        }
+      }
+      //响应HTTP请求状态变化的函数
+      function httpStateChange()
+      {
+        if (xmlHttp.readyState==4)
+        {
+          if (xmlHttp.status==200 || xmlHttp.status==0)
+          {
+            var arr = xmlHttp.responseText.split("|");
+            //删除原有选项
+            for (var i=document.myForm.section.length-1;i>-1;i--)
+            {
+              document.myForm.section.remove(i);
+            }
+            //通过循环添加选项
+            for (var i=0;i<arr.length;i++)
+            {
+              document.myForm.section.options[i] = new Option(arr[i],arr[i]);
+            }
+          }
+        }
+      }
+      //异步调用服务器端数据
+      function setSection(selectIndex)
+      {
+        createXMLHttpRequest();
+        if (xmlHttp!=null)
+        {
+          xmlHttp.open("get","16.2.2.asp?listName="+selectIndex,true);          
+          xmlHttp.onreadystatechange = httpStateChange;
+          xmlHttp.send(null);
+        }
+      }
+    -->
+    </script>
+  </head>
+  <body onload="setSection(0)">
+    <form name="myForm">
+      <select name="chapter" onchange="setSection(this.selectedIndex)">
+        <option>第1章  JavaScript基础</option>
+        <option>第2章  常量、变量与数据类型</option>
+        <option>第3章  表达式与运算符</option>
+      </select>
+      <select name="section">
+      </select>
+    </form>
+  </body>
+</html>

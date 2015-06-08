@@ -24,12 +24,16 @@
     function httpStateChange () {
       //判断异步调用是否完成
       if (xmlHttp.readyState == 4) {
+        console.log("异步调用完成");
         //判断异步调用是否成功，如果成功则开始局部更新数据
         if (xmlHttp.status == 200 || xmlHttp.status == 0) {
+          console.log("异步调用成功");
           //查找节点
           var node = document.getElementById("myDiv");
+          console.log("查找到节点"+node);
           //更新数据
           node.firstChild.nodeValue = xmlHttp.responseText;
+          console.log("数据更新"+node.firstChild.nodeValue);
         }else{
           //如果异步调用未成功，弹出警告框，并显示出错信息
           alert("异步调用出错\n返回的HTTP状态码为: "+xmlHttp.status+"\n送回HTTP状态信息为: "+xmlHttp.statusText());
@@ -44,7 +48,7 @@
       if (xmlHttp != null) {
         // 创建HTTP请求
         xmlHttp.open("get", "ajax.txt",true);
-        console.log("创建成功");
+        console.log("创建HTTP请求成功");
         // 设置响应HTTP请求变化的函数
         xmlHttp.onreadystatechange = httpStateChange;
         console.log("设置请求变化函数成功");

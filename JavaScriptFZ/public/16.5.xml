@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<users>
+  <user>
+    <name>admin</name>
+    <sex>男</sex>
+    <job>经理</job>
+    <address>北京市朝阳区</address>
+  </user>
+  <user>
+    <name>manage</name>
+    <sex>女</sex>
+    <job>业务员</job>
+    <address>北京市东城区</address>
+  </user>
+</users>
